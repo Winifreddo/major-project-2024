@@ -25,13 +25,24 @@ import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
+  //   const handleLinkClick = () => {
+  //     setIsPopoverOpen(false); // Close popover before navigation
+  //   };
   return (
     <header className="font-poppins">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        <div className="flex lg:flex-1">
+      <nav className=" flex max-w-9xl items-center justify-between py-2 lg:p-4">
+        <div className="flex  justify-start">
           <Link href="/">
             <span className="sr-only">Reform</span>{" "}
-            <Image src="/images/Reform.png" alt="logo" height={75} width={75} />{" "}
+            <Image
+              src="/images/Reform.png"
+              alt="logo"
+              height={100}
+              width={100}
+              //   className="lg:rounded-full"
+            />{" "}
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -46,36 +57,68 @@ const Navigation = () => {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1">
-              Shop <ExpandMoreIcon className="h-5 w-5" />
-            </PopoverButton>
-            <PopoverPanel
-              transition
-              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md  overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-            >
-              <div className="p-4">
-                {categories.map((category, index) => (
-                  <div
-                    key={index}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                  >
-                    <Link href={`/shop/${category.category}`}>
-                      {category.category}
-                    </Link>
+            {({ open }) => (
+              <>
+                {" "}
+                <PopoverButton className="flex items-center gap-x-2 justify-start pl-4">
+                  Shop{" "}
+                  <ExpandMoreIcon
+                    className={`${
+                      open ? "transform rotate-180" : ""
+                    } h-5 w-5 flex-none`}
+                    aria-hidden="true"
+                  />
+                </PopoverButton>
+                <PopoverPanel
+                  transition
+                  className="absolute -left-32 top-full z-99 mt-14 w-screen max-w-screen-2xl overflow-hidden p-4 bg-white shadow-lg  transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                >
+                  <div className="grid grid-rows-1 grid-flow-col gap-1 z-10 justify-items-center">
+                    {categories.map((category, index) => (
+                      <div
+                        key={index}
+                        className={`group relative flex flex-col p-3 m-1 text-sm leading-6  ${
+                          index % 2 == 0
+                            ? "hover:bg-salmonPink"
+                            : "hover:bg-lightYellow"
+                        } hover:rounded-md transition hover:opacity-85`}
+                      >
+                        <Link
+                          href={`/shop/${category.category}`}
+                          onClick={() => setIsPopoverOpen(false)}
+                        >
+                          <Image
+                            src={category.image}
+                            alt={category.category}
+                            width={175}
+                            height={175}
+                          />
+                        </Link>
+                        <Link
+                          href={`/shop/${category.category}`}
+                          onClick={() => setIsPopoverOpen(false)}
+                        >
+                          <h4 className="font-medium text-center p-2">
+                            {category.category}
+                          </h4>
+                        </Link>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </PopoverPanel>
+                </PopoverPanel>
+              </>
+            )}
           </Popover>
           <Link href="/services">Services</Link>
           <Link href="/blog">Learn</Link>
           <Link href="/FAQs">About Us</Link>
         </PopoverGroup>
+
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="px-4">
             <Search />
           </div>
-          <Link href="/login" className="lg:px-2">
+          <Link href="/login" className="lg:px-2 text-darkPink">
             <AccountCircleOutlinedIcon />
           </Link>
           <Link href="/cart" className="lg:px-2">
@@ -107,13 +150,19 @@ const Navigation = () => {
                 />{" "}
                 <span className="sr-only">Reform</span>
               </Link>
+              <div className="px-4 m-2">
+                <Search />
+              </div>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <CancelOutlinedIcon className="h-6 w-6" aria-hidden="true" />
+                <CancelOutlinedIcon
+                  className="h-6 w-6 text-darkPink"
+                  aria-hidden="true"
+                />
               </button>
             </div>
             <div className="mt-6 flow-root">
@@ -132,66 +181,79 @@ const Navigation = () => {
                           />
                         </DisclosureButton>
                         <DisclosurePanel className="mt-2 space-y-2">
-                          {categories.map((category, index) => (
-                            <Link
-                              key={index}
-                              href={`/shop/${category.category}`}
-                              className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {category.category}
-                            </Link>
-                          ))}
+                          <div className="grid grid-rows-3 grid-flow-col gap-1 z-10 justify-items-center">
+                            {categories.map((category, index) => (
+                              <div
+                                key={index}
+                                className="group relative flex flex-col p-2 m-1 text-sm leading-6  hover:bg-salmonPink hover:rounded-md transition"
+                              >
+                                <Link
+                                  href={`/shop/${category.category}`}
+                                  className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink hover:rounded-md"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  <Image
+                                    src={category.image}
+                                    alt={category.category}
+                                    width={150}
+                                    height={150}
+                                  />
+                                </Link>
+                                <h4 className="text-center">
+                                  {category.category}
+                                </h4>
+                              </div>
+                            ))}
+                          </div>
                         </DisclosurePanel>
                       </>
                     )}
                   </Disclosure>
                   <Link
                     href="/services"
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Services{" "}
                   </Link>
                   <Link
                     href="/blog"
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Learn{" "}
                   </Link>
                   <Link
                     href="/FAQs"
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     About Us
                   </Link>
                   <div>
-                    <div className="px-4">
-                      <Search />
+                    <div className="flex flex-1 p-2 justify-center">
+                      <Link
+                        href="/login"
+                        className="lg:px-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <AccountCircleOutlinedIcon />
+                      </Link>
+                      <Link
+                        href="/cart"
+                        className="lg:px-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <ShoppingBagOutlinedIcon />
+                      </Link>
+                      <Link
+                        href="/wishlist"
+                        className="lg:px-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <FavoriteBorderOutlinedIcon />
+                      </Link>
                     </div>
-                    <Link
-                      href="/login"
-                      className="lg:px-2"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <AccountCircleOutlinedIcon />
-                    </Link>
-                    <Link
-                      href="/cart"
-                      className="lg:px-2"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <ShoppingBagOutlinedIcon />
-                    </Link>
-                    <Link
-                      href="/wishlist"
-                      className="lg:px-2"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <FavoriteBorderOutlinedIcon />
-                    </Link>
                   </div>
                 </div>
               </div>
