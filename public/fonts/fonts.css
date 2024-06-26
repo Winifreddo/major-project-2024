@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "tanMeringue";
+  src: url("./tanMeringue.otf") format("opentype");
+}
+
+h1 {
+  font-family: "tanMeringue";
+}
