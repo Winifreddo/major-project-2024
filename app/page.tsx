@@ -2,7 +2,7 @@ import Image from "next/image";
 import prisma from "@/lib/prisma";
 import "/public/fonts/fonts.css";
 import Hero from "@/components/Hero";
-import SmoothScroll from "@/components/SmoothScroll";
+// import SmoothScroll from "@/components/SmoothScroll";
 import FeaturedMaterials from "@/components/FeaturedMaterials";
 import Test from "@/components/Test";
 import ShuffleHero from "@/components/ImageGal";
@@ -21,9 +21,11 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-bgColor">
       {/* <Hero /> */}
+
       <ShuffleHero />
-      <FeaturedMaterials />
-      <Test />
+
+      {/* <FeaturedMaterials />
+      <Test /> */}
     </main>
   );
 }

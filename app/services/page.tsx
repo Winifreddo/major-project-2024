@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 
 const page = () => {
-  return <div>I am services page</div>;
+  return <div></div>;
 };
 
 export default page;
