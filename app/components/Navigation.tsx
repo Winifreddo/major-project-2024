@@ -22,10 +22,25 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navigation = () => {
+  const path = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
+  const links = [
+    { href: "/services", label: "Services" },
+    { href: "/blog", label: "Learn" },
+    { href: "/FAQs", label: "About Us" },
+  ];
+
+  const icons = [
+    { href: "/login", icon: <AccountCircleOutlinedIcon /> },
+    { href: "/cart", icon: <ShoppingBagOutlinedIcon /> },
+    { href: "/wishlist", icon: <FavoriteBorderOutlinedIcon /> },
+  ];
 
   //   const handleLinkClick = () => {
   //     setIsPopoverOpen(false); // Close popover before navigation
@@ -59,19 +74,20 @@ const Navigation = () => {
           <Popover className="relative">
             {({ open }) => (
               <>
-                {" "}
-                <PopoverButton className="flex items-center gap-x-2 justify-start pl-4">
-                  Shop{" "}
-                  <ExpandMoreIcon
-                    className={`${
-                      open ? "transform rotate-180" : ""
-                    } h-5 w-5 flex-none`}
-                    aria-hidden="true"
-                  />
-                </PopoverButton>
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  <PopoverButton className="flex items-center gap-x-2 justify-start pl-4">
+                    Shop{" "}
+                    <ExpandMoreIcon
+                      className={`${
+                        open ? "transform rotate-180" : ""
+                      } h-5 w-5 flex-none`}
+                      aria-hidden="true"
+                    />
+                  </PopoverButton>
+                </motion.div>
                 <PopoverPanel
                   transition
-                  className="absolute -left-32 top-full z-99 mt-14 w-screen max-w-screen-2xl overflow-hidden p-4 bg-bgColor shadow-lg  transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                  className="absolute -left-32 top-full z-40 mt-12 w-screen max-w-screen-2xl overflow-hidden p-4 bg-bgColor shadow-lg  transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   <div className="grid grid-rows-1 grid-flow-col gap-1 z-10 justify-items-center">
                     {categories.map((category, index) => (
@@ -109,24 +125,41 @@ const Navigation = () => {
               </>
             )}
           </Popover>
-          <Link href="/services">Services</Link>
-          <Link href="/blog">Learn</Link>
-          <Link href="/FAQs">About Us</Link>
+          {links.map((link) => (
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Link
+                href={link.href}
+                key={link.href}
+                className={`${
+                  path === link.href
+                    ? "text-darkPink font-semibold"
+                    : "text-gray-900"
+                }`}
+              >
+                {link.label}
+              </Link>
+            </motion.div>
+          ))}
         </PopoverGroup>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="px-4">
             <Search />
           </div>
-          <Link href="/login" className="lg:px-2 text-darkPink">
-            <AccountCircleOutlinedIcon />
-          </Link>
-          <Link href="/cart" className="lg:px-2">
-            <ShoppingBagOutlinedIcon />
-          </Link>
-          <Link href="/wishlist" className="lg:px-2">
-            <FavoriteBorderOutlinedIcon />
-          </Link>
+          {icons.map((icon, index) => (
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Link
+                href={icon.href}
+                key={index}
+                className={`${
+                  path === icon.href ? "text-darkPink" : "text-gray-900"
+                } lg:px-2`}
+                onClick={() => setIsPopoverOpen(false)}
+              >
+                {icon.icon}
+              </Link>
+            </motion.div>
+          ))}
         </div>
         <Dialog
           className="lg:hidden"

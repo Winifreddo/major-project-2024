@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
-import SmoothScroll from "@/components/SmoothScroll";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["200", "400", "500"],
@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Reformed",
+  title: "Reform",
   description: "e-commerce website",
 };
 
@@ -23,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <Navigation />
-        <SmoothScroll>{children}</SmoothScroll>
+        <main className="bg-bgColor">
+          <Navigation />
+          {children}
+        </main>
       </body>
     </html>
   );
