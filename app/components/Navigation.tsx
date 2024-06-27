@@ -32,7 +32,7 @@ const Navigation = () => {
   //   };
   return (
     <header className="font-poppins">
-      <nav className=" flex max-w-9xl items-center justify-between py-2 lg:p-4">
+      <nav className=" flex max-w-9xl items-center justify-between py-2 lg:p-4 bg-bgColor">
         <div className="flex  justify-start">
           <Link href="/">
             <span className="sr-only">Reform</span>{" "}
@@ -71,7 +71,7 @@ const Navigation = () => {
                 </PopoverButton>
                 <PopoverPanel
                   transition
-                  className="absolute -left-32 top-full z-99 mt-14 w-screen max-w-screen-2xl overflow-hidden p-4 bg-white shadow-lg  transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                  className="absolute -left-32 top-full z-99 mt-14 w-screen max-w-screen-2xl overflow-hidden p-4 bg-bgColor shadow-lg  transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   <div className="grid grid-rows-1 grid-flow-col gap-1 z-10 justify-items-center">
                     {categories.map((category, index) => (

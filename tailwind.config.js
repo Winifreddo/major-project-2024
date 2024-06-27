@@ -13,6 +13,7 @@ module.exports = {
       salmonPink: "#FFE0DF",
       white: "#FFFFFF",
       lightYellow: "#FFE485",
+      bgColor: "#F5F0EC",
     },
     extend: {
       fontFamily: {

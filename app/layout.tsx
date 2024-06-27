@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
-
+import SmoothScroll from "@/components/SmoothScroll";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["200", "400", "500"],
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.variable}>
         <Navigation />
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

@@ -13,7 +13,7 @@ export default async function Home() {
   // const users = await getUser();
   // console.log(users);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-pink-600 p-24 font-sans">
+    <main className="flex min-h-screen bg-bgColor flex-col items-center justify-between text-pink-600 p-24 font-sans">
       <h1 className="Title"> Hello</h1>
       <p className="font-poppins font-thin">test for font</p>
       <Image src="/images/shorts1.webp" alt="logo" width={200} height={200} />
