@@ -4,7 +4,7 @@ import "/public/fonts/fonts.css";
 import Hero from "@/components/Hero";
 // import SmoothScroll from "@/components/SmoothScroll";
 import FeaturedMaterials from "@/components/FeaturedMaterials";
-import Test from "@/components/Test";
+
 import ShuffleHero from "@/components/ImageGal";
 
 // async function getUser() {
@@ -23,9 +23,6 @@ export default async function Home() {
       {/* <Hero /> */}
 
       <ShuffleHero />
-
-      {/* <FeaturedMaterials />
-      <Test /> */}
     </main>
   );
 }
