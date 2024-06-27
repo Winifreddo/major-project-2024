@@ -13,9 +13,9 @@ const ShuffleHero = () => {
           RE- <br /> FORM
         </h1>
         <p className="text-base md:text-lg my-4 md:my-6 font-light">
-          We're Reform! A sustainable fashion brand designing for the future and
-          creating for the here and now. We love all things fashion and we're
-          here to help you stay fashionable and sustainable!
+          We&#39;re Reform! A sustainable fashion brand designing for the future
+          and creating for the here and now. We love all things fashion and
+          we&#39;re here to help you stay fashionable and sustainable!
         </p>
         <button className="bg-darkPink text-stoneLight font-medium py-2 px-4 rounded transition-all hover:bg-salmonPink hover:text-black active:scale-95">
           Learn More About Us
