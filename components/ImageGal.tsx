@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const ShuffleHero = () => {
   return (
@@ -18,7 +19,7 @@ const ShuffleHero = () => {
           we&#39;re here to help you stay fashionable and sustainable!
         </p>
         <button className="bg-darkPink text-stoneLight font-medium py-2 px-4 rounded transition-all hover:bg-salmonPink hover:text-black active:scale-95">
-          Learn More About Us
+          <Link href="/FAQs"> Learn More About our journey</Link>
         </button>
       </div>
       <ShuffleGrid />
@@ -92,22 +93,6 @@ const squareData = [
     id: 12,
     src: "images/hero3.jpg",
   },
-  //   {
-  //     id: 13,
-  //     src: "images/jewlry.jpg",
-  //   },
-  //   {
-  //     id: 14,
-  //     src: "images/linen.svg",
-  //   },
-  //   {
-  //     id: 15,
-  //     src: "images/linen2.svg",
-  //   },
-  //   {
-  //     id: 16,
-  //     src: "images/denim.svg",
-  //   },
 ];
 
 const generateSquares = () => {
@@ -121,7 +106,9 @@ const generateSquares = () => {
         backgroundImage: `url(${sq.src})`,
         backgroundSize: "cover",
       }}
-    ></motion.div>
+    >
+      {/* <img src={sq.src} alt="clothing" className="" /> */}
+    </motion.div>
   ));
 };
 
