@@ -104,6 +104,7 @@ const Navigation = () => {
                           onClick={() => setIsPopoverOpen(false)}
                         >
                           <Image
+                            key={index}
                             src={category.image}
                             alt={category.category}
                             width={175}
@@ -112,6 +113,7 @@ const Navigation = () => {
                         </Link>
                         <Link
                           href={`/shop/${category.category}`}
+                          key={index}
                           onClick={() => setIsPopoverOpen(false)}
                         >
                           <h4 className="font-medium text-center p-2">
@@ -221,11 +223,13 @@ const Navigation = () => {
                                 className="group relative flex flex-col p-2 m-1 text-sm leading-6  hover:bg-salmonPink hover:rounded-md transition"
                               >
                                 <Link
+                                  key={index}
                                   href={`/shop/${category.category}`}
                                   className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink hover:rounded-md"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   <Image
+                                    key={index}
                                     src={category.image}
                                     alt={category.category}
                                     width={150}
