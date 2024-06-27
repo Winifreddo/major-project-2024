@@ -127,8 +127,8 @@ const Navigation = () => {
               </>
             )}
           </Popover>
-          {links.map((link) => (
-            <motion.div whileHover={{ scale: 1.1 }}>
+          {links.map((link, index) => (
+            <motion.div key={index} whileHover={{ scale: 1.1 }}>
               <Link
                 href={link.href}
                 key={link.href}
@@ -149,7 +149,7 @@ const Navigation = () => {
             <Search />
           </div>
           {icons.map((icon, index) => (
-            <motion.div whileHover={{ scale: 1.1 }}>
+            <motion.div whileHover={{ scale: 1.1 }} key={index}>
               <Link
                 href={icon.href}
                 key={index}
