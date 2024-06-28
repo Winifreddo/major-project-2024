@@ -168,7 +168,9 @@ const Content = ({
       <p className="mb-4 text-lg font-poppins font-thin md:text-xl">{text}</p>
 
       <button className="w-full rounded bg-black px-6 py-2 text-l text-white font-poppins transition-colors hover:bg-neutral-700 md:w-fit">
-        <Link href={href}>Learn more</Link>
+        <Link href={href} target="_blank">
+          Learn more
+        </Link>
       </button>
     </div>
   </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import prisma from "@/lib/prisma";
 import "/public/fonts/fonts.css";
 import Hero from "@/components/Hero";
+import ShoppingCat from "@/components/ShoppingCat";
 // import SmoothScroll from "@/components/SmoothScroll";
 import FeaturedMaterials from "@/components/FeaturedMaterials";
 
@@ -23,6 +24,7 @@ export default async function Home() {
       {/* <Hero /> */}
 
       <ShuffleHero />
+      <ShoppingCat />
     </main>
   );
 }
