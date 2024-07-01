@@ -62,7 +62,7 @@ const HorizontalScroll = () => {
   return (
     <section ref={targetRef} className="relative h-[450vh]">
       <div className=" flex items-center justify-center h-32">
-        <span className="font-medium font-poppins uppercase mt-12  text-6xl">
+        <span className="font-medium font-poppins uppercase mt-12 text-4xl lg:text-6xl pt-12 lg:pt-0">
           Shop our collections
         </span>
       </div>

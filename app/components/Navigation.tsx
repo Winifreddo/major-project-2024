@@ -53,7 +53,7 @@ const Navigation = () => {
             <span className="sr-only">Reform</span>{" "}
             <Image
               src="/images/Reform.png"
-              alt="logo"
+              alt="Reform Logo"
               height={100}
               width={100}
               //   className="lg:rounded-full"
