@@ -37,10 +37,11 @@ const Footer = () => {
         <h3 className="font-bold lg:text-xlg text-xl">Quick Links</h3>
         {links.map((link, index) => (
           <motion.div
+            key={index}
             whileHover={{ scale: 1.1 }}
             className="flex flex-col text-sm leading-10 "
           >
-            <div key={index}>
+            <div>
               <Link href={link.href}>{link.label}</Link>
             </div>
           </motion.div>
@@ -50,10 +51,11 @@ const Footer = () => {
         <h3 className="font-bold lg:text-xlg text-xl">Shop</h3>
         {shoppingLinks.map((link, index) => (
           <motion.div
+            key={index}
             whileHover={{ scale: 1.1 }}
             className="flex flex-col text-sm leading-10"
           >
-            <div key={index}>
+            <div>
               <Link href={link.href}>{link.label}</Link>
             </div>
           </motion.div>

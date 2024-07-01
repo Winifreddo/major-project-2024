@@ -46,7 +46,7 @@ const Navigation = () => {
   //     setIsPopoverOpen(false); // Close popover before navigation
   //   };
   return (
-    <header className="font-poppins">
+    <header className="font-poppins p-2">
       <nav className=" flex max-w-9xl items-center justify-between py-2 lg:p-4 bg-bgColor">
         <div className="flex  justify-start">
           <Link href="/">
