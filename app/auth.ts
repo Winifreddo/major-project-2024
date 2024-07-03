@@ -22,20 +22,20 @@ import Google from "next-auth/providers/google";
 import { Adapter } from "next-auth/adapters";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  callbacks: {
-    async redirect(url, baseUrl) {
-      return baseUrl;
-  },
   theme: {
     brandColor: "#F5F0EC",
     logo: "/images/Reform.png",
   },
+  callbacks: {
+    async redirect({url, baseUrl}) {
+      return baseUrl;
+    },
+  },
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
-      Google({
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    
-      }),
-    ],
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+  ],
 });
