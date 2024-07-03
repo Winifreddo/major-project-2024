@@ -6,7 +6,7 @@ import Credentials from "next-auth/providers/credentials"
 import { Adapter } from "next-auth/adapters";
  
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  trustHost: true,
+
     theme: {
         brandColor: "#F5F0EC",
         logo: "/images/Reform.png",
