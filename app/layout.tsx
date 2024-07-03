@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { SessionProvider } from "next-auth/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,13 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <main className="bg-bgColor">
-          <SmoothScroll>
-            <Navigation />
-            {children}
-            <Footer />
-          </SmoothScroll>
-        </main>
+        <SessionProvider>
+          <main className="bg-bgColor">
+            <SmoothScroll>
+              <Navigation />
+              {children}
+              <Footer />
+            </SmoothScroll>
+          </main>
+        </SessionProvider>
       </body>
     </html>
   );
