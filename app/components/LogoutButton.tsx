@@ -1,14 +1,15 @@
 import React from "react";
-// import { signOut } from "@/auth.config";
+
 import { signOut } from "next-auth/react";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 const LogoutButton = () => {
   return (
     <button
       onClick={() => signOut({ callbackUrl: "/" })}
-      className="bg-smokeGrey text-stoneDark p-2 rounded-md font-poppins"
+      className="text-smokeGrey"
     >
-      Logout
+      <LogoutOutlinedIcon />
     </button>
   );
 };

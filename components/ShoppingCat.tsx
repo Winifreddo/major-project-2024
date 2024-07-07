@@ -2,6 +2,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
+import Image from "next/image";
 
 type CardType = {
   id: number;
@@ -57,16 +58,16 @@ const HorizontalScroll = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-75%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[450vh]">
-      <div className=" flex items-center justify-center h-32">
-        <span className="font-medium font-poppins uppercase mt-12 text-4xl lg:text-6xl pt-12 lg:pt-0">
+    <section ref={targetRef} className="relative md:h-[450vh] h-[250vh] ">
+      <div className=" flex items-center justify-center lg:h-32">
+        <span className="font-medium font-poppins uppercase mt-12 text-center text-4xl md:text-6xl pt-12 lg:pt-0">
           Shop our collections
         </span>
       </div>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <div className="sticky top-0 flex lg:h-screen md:h-[65vh] h-[40vh] items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
@@ -81,18 +82,19 @@ const Card = ({ card }: { card: CardType }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden"
+      className="group relative md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] h-[200px] w-[200px] overflow-hidden"
     >
-      <div
+      <img src={card.imageUrl} alt={card.title} className="object-cover" />
+      {/* <div
         style={{
           backgroundImage: `url(${card.imageUrl})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
+      ></div> */}
       <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-poppins font-semibold uppercase text-white backdrop-blur-lg">
+        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 md:text-6xl text-2xl font-poppins font-semibold uppercase text-white backdrop-blur-lg">
           {card.title}
         </p>
         <button>

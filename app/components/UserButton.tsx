@@ -5,6 +5,8 @@ import { Session } from "next-auth";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { signOut } from "next-auth/react";
 
 interface UserButtonProps {
   user: Session["user"];
@@ -59,9 +61,15 @@ const UserButton = ({ user }: UserButtonProps) => {
               Settings
             </Link>
           </MenuItem>
+          <MenuItem>
+            <button onClick={() => signOut({ callbackUrl: "/" })}>
+              <LogoutOutlinedIcon />
+              Logout
+            </button>
+          </MenuItem>
         </MenuItems>
       </Menu>
-      <LogoutButton />
+      {/* <LogoutButton /> */}
     </div>
   );
 };
