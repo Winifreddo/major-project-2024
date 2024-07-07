@@ -16,7 +16,7 @@ import Search from "./Search";
 import { categories } from "../navigationRoutes";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { motion } from "framer-motion";
@@ -56,19 +56,20 @@ export default function Navigation() {
             <Image
               src="/images/Reform.png"
               alt="Reform Logo"
-              height={100}
-              width={100}
+              height={60}
+              width={60}
+              className="m-2"
             />{" "}
           </Link>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md h-40px w-40px p-2.5"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            <MenuIcon className="m-2 h-11 w-11" aria-hidden="true" />
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
@@ -81,7 +82,7 @@ export default function Navigation() {
                     <ExpandMoreIcon
                       className={`${
                         open ? "transform rotate-180" : ""
-                      } h-5 w-5 flex-none`}
+                      } h-10 w-10 flex-none p-2`}
                       aria-hidden="true"
                     />
                   </PopoverButton>
@@ -171,40 +172,40 @@ export default function Navigation() {
               >
                 {" "}
                 <Image
-                  src="/images/Reform.png"
+                  src="/images/ReformTrans.svg"
                   alt="logo"
-                  height={75}
-                  width={75}
+                  height={50}
+                  width={50}
                 />{" "}
                 <span className="sr-only">Reform</span>
               </Link>
-              <div className="px-4 m-2">
+              <div className="md:px-4 md:m-2 px-1 m-1">
                 <Search />
               </div>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 h-40px w-40px"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <CancelOutlinedIcon
-                  className="h-6 w-6 text-darkPink"
+                <CloseOutlinedIcon
+                  className="h-11 w-11 text-smokeGrey"
                   aria-hidden="true"
                 />
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="-my-6 divide-y">
                 <div className="space-y-2 py-6">
                   <Disclosure as="div" className="-mx-3">
                     {({ open }) => (
                       <>
-                        <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                        <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7">
                           <span>Shop</span>
                           <ExpandMoreIcon
                             className={`${
                               open ? "transform rotate-180" : ""
-                            } h-5 w-5 flex-none`}
+                            } h-10 w-10 flex-none p-2`}
                             aria-hidden="true"
                           />
                         </DisclosureButton>

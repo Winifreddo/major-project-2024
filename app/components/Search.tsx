@@ -7,7 +7,7 @@ const Search = () => {
         <input
           type="text"
           placeholder="Search"
-          className="bg-bgColor px-1 w-52"
+          className="md:bg-bgColor bg-white px-1 md:w-52 w-36"
         />
         <button>
           <SearchOutlinedIcon />
