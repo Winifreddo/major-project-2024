@@ -12,7 +12,7 @@ interface UserButtonProps {
 
 const UserButton = ({ user }: UserButtonProps) => {
   return (
-    <div>
+    <div className="flex flex-row items-center gap-2">
       <Menu>
         <MenuButton>
           <Image
@@ -27,6 +27,14 @@ const UserButton = ({ user }: UserButtonProps) => {
           anchor="bottom"
           className=" bg-darkPink font-poppins p-4 rounded-md"
         >
+          <MenuItem>
+            <Link
+              className="block data-[focus]:bg-blue-100"
+              href={`/profile/account/${user?.id}`}
+            >
+              {user?.name || "User"}
+            </Link>
+          </MenuItem>
           <MenuItem>
             <Link
               className="block data-[focus]:bg-blue-100"

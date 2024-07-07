@@ -1,36 +1,33 @@
-import React from "react";
+"use client";
+
+// imports for server side rendering
+// import { auth, signIn } from "@/auth.config";
+// import getSession from "@/lib/getSession";
+import React, { use } from "react";
 import NavigationLinks from "./NavigationLinks";
-
-import { auth } from "../auth";
 import UserButton from "./UserButton";
-import { signIn } from "../auth";
-import AccountCircleOutlined from "@mui/icons-material/AccountCircleOutlined";
 import Search from "./Search";
-import getSession from "@/lib/getSession";
+// imports for client side rendering
+import { signIn, useSession } from "next-auth/react";
 
-export default async function Navigation() {
-  const session = await getSession();
-  const user = session?.user;
+export default function Navigation() {
+  // get session from session provider on layout
+  const session = useSession();
+  const user = session?.data?.user;
+
   return (
-    <div className="flex items-center">
+    <div className="flex items-center justify-stretch w-screen">
       <NavigationLinks />
-      <Search />
-      {user ? <UserButton user={user} /> : <SignInButton />}
+      <div className="flex items-center justify-items-end gap-2">
+        <Search />
+        {/* if user logged in show user button, if not show sign in button */}
+        {user && <UserButton user={user} />}
+        {!user && session.status !== "loading" && <SignInButton />}
+      </div>
     </div>
   );
 }
 
 function SignInButton() {
-  return (
-    <form
-      action={async () => {
-        "use server";
-        await signIn("google");
-      }}
-    >
-      <button type="submit">
-        <AccountCircleOutlined />
-      </button>
-    </form>
-  );
+  return <button onClick={() => signIn()}>Login</button>;
 }

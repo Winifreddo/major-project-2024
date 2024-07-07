@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import { Session } from "next-auth";
 import { redirect } from "next/navigation";
-import { auth } from "@/app/auth";
+import { auth } from "@/auth.config";
 
 export default async function page() {
   const session = await auth();
@@ -17,6 +17,7 @@ export default async function page() {
     },
     include: { profile: true },
   });
+  console.log(account?.profile);
   return (
     <div>
       <ul>
