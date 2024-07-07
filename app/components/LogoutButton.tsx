@@ -1,16 +1,15 @@
 import React from "react";
-import { signOut } from "../auth";
+// import { signOut } from "@/auth.config";
+import { signOut } from "next-auth/react";
 
 const LogoutButton = () => {
   return (
-    <form
-      action={async () => {
-        "use server";
-        await signOut();
-      }}
+    <button
+      onClick={() => signOut({ callbackUrl: "/" })}
+      className="bg-smokeGrey text-stoneDark p-2 rounded-md font-poppins"
     >
-      <button type="submit">Logout</button>
-    </form>
+      Logout
+    </button>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { auth } from "@/app/auth";
+import { auth } from "@/auth.config";
 import { redirect } from "next/navigation";
 import getSession from "@/lib/getSession";
 
