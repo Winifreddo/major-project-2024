@@ -77,38 +77,46 @@ const squareData = [
     id: 8,
     src: "images/hero5.svg",
   },
+  // {
+  //   id: 9,
+  //   src: "images/dresses.jpg",
+  // },
+  // {
+  //   id: 10,
+  //   src: "images/tops.png",
+  // },
+  // {
+  //   id: 11,
+  //   src: "images/bottoms.jpg",
+  // },
   {
     id: 9,
-    src: "images/dresses.jpg",
-  },
-  {
-    id: 10,
-    src: "images/tops.png",
-  },
-  {
-    id: 11,
-    src: "images/bottoms.jpg",
-  },
-  {
-    id: 12,
     src: "images/hero3.jpg",
   },
 ];
 
 const generateSquares = () => {
   return shuffle(squareData).map((sq) => (
-    <motion.div
+    <motion.img
       key={sq.id}
       layout
       transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full"
-      style={{
-        backgroundImage: `url(${sq.src})`,
-        backgroundSize: "cover",
-      }}
-    >
-      {/* <img src={sq.src} alt="clothing" className="" /> */}
-    </motion.div>
+      className="w-full h-full object-cover"
+      src={sq.src}
+      alt="clothing"
+    ></motion.img>
+    // <motion.div
+    //   key={sq.id}
+    //   layout
+    //   transition={{ duration: 1.5, type: "spring" }}
+    //   className="w-full h-full"
+    //   // style={{
+    //   //   backgroundImage: `url(${sq.src})`,
+    //   //   backgroundSize: "cover",
+    //   // }}
+    // >
+    //   <img src={sq.src} alt="clothing" className="object-cover" />
+    // </motion.div>
   ));
 };
 
@@ -129,7 +137,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 grid-rows-3 h-[600px] gap-1">
+    <div className="grid grid-cols-3 grid-rows-3  gap-1">
       {squares.map((sq) => sq)}
     </div>
   );

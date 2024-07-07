@@ -158,7 +158,7 @@ const Content = ({
   label: string;
   text: string;
 }) => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
+  <div className="mx-auto grid max-w-5xl grid-cols-1 place-items-center gap-8 px-4 pb-24 pt-12 md:grid-cols-12 ">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
       <Link href={href}>
         <Image src={label} alt="brand" width={250} height={250} />
@@ -167,7 +167,7 @@ const Content = ({
     <div className="col-span-1 md:col-span-8">
       <p className="mb-4 text-lg font-poppins font-thin md:text-xl">{text}</p>
 
-      <button className="w-full rounded bg-black px-6 py-2 text-l text-white font-poppins transition-colors hover:bg-neutral-700 md:w-fit">
+      <button className="w-full rounded bg-black px-6 py-2 text-l text-white font-poppins transition-colors hover:smokeGrey md:w-fit">
         <Link href={href} target="_blank">
           Learn more
         </Link>
