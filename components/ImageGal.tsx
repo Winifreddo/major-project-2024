@@ -77,18 +77,6 @@ const squareData = [
     id: 8,
     src: "images/hero5.svg",
   },
-  // {
-  //   id: 9,
-  //   src: "images/dresses.jpg",
-  // },
-  // {
-  //   id: 10,
-  //   src: "images/tops.png",
-  // },
-  // {
-  //   id: 11,
-  //   src: "images/bottoms.jpg",
-  // },
   {
     id: 9,
     src: "images/hero3.jpg",
