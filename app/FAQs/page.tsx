@@ -152,12 +152,7 @@ const Page = () => {
           <h3 className="font-poppins font-bold text-stoneDark md:pt-4 pt-8 text-center text-5xl">
             FASHION FOR A BETTER FUTURE
           </h3>
-          <Image
-            src="/images/ReformTrans.svg"
-            alt="Reform"
-            width={200}
-            height={200}
-          />
+          <Image src="/images/4.png" alt="Reform" width={200} height={200} />
         </div>
       </section>
     </>

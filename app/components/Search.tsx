@@ -2,7 +2,7 @@ import React from "react";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 const Search = () => {
   return (
-    <div className="flex justify-between border outline outline-offset-1 rounded-md p-1 opacity-75">
+    <div className="flex justify-between border outline  rounded-md p-1 md:mt-2 opacity-75">
       <form action="">
         <input
           type="text"

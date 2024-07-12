@@ -4,7 +4,6 @@
 // import { auth, signIn } from "@/auth.config";
 // import getSession from "@/lib/getSession";
 import React, { useState } from "react";
-// import NavigationLinks from "./NavigationLinks";
 import UserButton from "./UserButton";
 
 // imports for client side rendering
@@ -20,7 +19,6 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { motion } from "framer-motion";
-
 import {
   Popover,
   PopoverButton,
@@ -54,11 +52,11 @@ export default function Navigation() {
           <Link href="/">
             <span className="sr-only">Reform</span>{" "}
             <Image
-              src="/images/Reform.png"
+              src="/images/ReformLogo2.svg"
               alt="Reform Logo"
-              height={60}
-              width={60}
-              className="m-2"
+              height={100}
+              width={100}
+              className="m-2 object-cover"
             />{" "}
           </Link>
         </div>
@@ -82,7 +80,7 @@ export default function Navigation() {
                     <ExpandMoreIcon
                       className={`${
                         open ? "transform rotate-180" : ""
-                      } h-10 w-10 flex-none p-2`}
+                      } h-8 w-8 flex-none p-1`}
                       aria-hidden="true"
                     />
                   </PopoverButton>
@@ -130,22 +128,26 @@ export default function Navigation() {
             )}
           </Popover>
           {links.map((link, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.1 }}>
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.1 }}
+              className="md:pt-1"
+            >
               <Link
                 href={link.href}
                 key={link.href}
                 className={`${
                   path === link.href
                     ? "text-darkPink font-semibold"
-                    : "text-gray-900"
-                }`}
+                    : "text-black"
+                } `}
               >
                 {link.label}
               </Link>
             </motion.div>
           ))}
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 gap-4 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 gap-4 lg:justify-end items-center">
           <div className="px-4">
             <Search />
           </div>
@@ -154,8 +156,8 @@ export default function Navigation() {
           {!user && session.status !== "loading" && (
             <button onClick={() => signIn()}>Login</button>
           )}
-          <FavoriteIcon className="h-10 w-10 text-smokeGrey" />
-          <ShoppingBagOutlinedIcon className="h-10 w-10 text-smokeGrey" />
+          <FavoriteIcon className="h-8 w-8 text-smokeGrey" />
+          <ShoppingBagOutlinedIcon className="h-8 w-8 text-smokeGrey" />
         </div>
         <Dialog
           className="lg:hidden"
@@ -205,7 +207,7 @@ export default function Navigation() {
                           <ExpandMoreIcon
                             className={`${
                               open ? "transform rotate-180" : ""
-                            } h-10 w-10 flex-none p-2`}
+                            } h-6 w-6 flex-none p-2`}
                             aria-hidden="true"
                           />
                         </DisclosureButton>
