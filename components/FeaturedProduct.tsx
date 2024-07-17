@@ -1,10 +1,10 @@
 "use client";
 import { duration } from "@mui/material";
 import React, { useRef } from "react";
-import { animate, motion, MotionProps, useInView } from "framer-motion";
+import { motion, MotionProps, useInView } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { twMerge } from "tailwind-merge";
-import { title } from "process";
 
 type SectionProps = {
   className?: string;
@@ -146,7 +146,9 @@ const ImageGal = () => {
 
             <div className="flex flex-col items-center mt-4">
               <h3 className="text-lg font-semibold">{vest.name}</h3>
-              <p className="text-sm font-thin">{vest.price}</p>
+              <Link href="#" className="text-sm font-thin">
+                {vest.price}
+              </Link>
             </div>
           </div>
         ))}
