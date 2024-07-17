@@ -20,8 +20,8 @@ const UserButton = ({ user }: UserButtonProps) => {
           <Image
             src={user?.image || "/images/avatar.svg"}
             alt="user image"
-            width={40}
-            height={40}
+            width={35}
+            height={35}
             className="rounded-full"
           />
         </MenuButton>

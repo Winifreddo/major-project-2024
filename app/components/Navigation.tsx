@@ -16,8 +16,9 @@ import { categories } from "../navigationRoutes";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import LoginIcon from "@mui/icons-material/Login";
 import { motion } from "framer-motion";
 import {
   Popover,
@@ -154,10 +155,12 @@ export default function Navigation() {
 
           {user && <UserButton user={user} />}
           {!user && session.status !== "loading" && (
-            <button onClick={() => signIn()}>Login</button>
+            <button onClick={() => signIn()}>
+              <LoginIcon className="h-7 w-7 text-darkPink" />
+            </button>
           )}
-          <FavoriteIcon className="h-8 w-8 text-smokeGrey" />
-          <ShoppingBagOutlinedIcon className="h-8 w-8 text-smokeGrey" />
+          <FavoriteBorderIcon className="h-7 w-7 text-darkPink" />
+          <ShoppingBagOutlinedIcon className="h-7 w-7 text-darkPink" />
         </div>
         <Dialog
           className="lg:hidden"
@@ -191,7 +194,7 @@ export default function Navigation() {
               >
                 <span className="sr-only">Close menu</span>
                 <CloseOutlinedIcon
-                  className="h-11 w-11 text-smokeGrey"
+                  className="h-11 w-11 text-darkPink"
                   aria-hidden="true"
                 />
               </button>
