@@ -3,9 +3,8 @@ import prisma from "@/lib/prisma";
 import "/public/fonts/fonts.css";
 import Hero from "@/components/Hero";
 import ShoppingCat from "@/components/ShoppingCat";
-// import SmoothScroll from "@/components/SmoothScroll";
 import FeaturedMaterials from "@/components/FeaturedMaterials";
-
+import FeaturedPoducts from "@/components/FeaturedProduct";
 import ShuffleHero from "@/components/ImageGal";
 
 // async function getUser() {
@@ -24,7 +23,10 @@ export default async function Home() {
       {/* <Hero /> */}
 
       <ShuffleHero />
+      <FeaturedPoducts />
       <ShoppingCat />
+      <FeaturedMaterials />
+      {/* <SmoothScroll /> */}
     </main>
   );
 }

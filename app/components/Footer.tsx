@@ -26,7 +26,7 @@ const Footer = () => {
     >
       <div>
         <Image
-          src="/images/Reform.png"
+          src="/images/ReformLogo2.svg"
           alt="Reform Logo"
           width={200}
           height={200}

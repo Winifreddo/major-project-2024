@@ -58,12 +58,12 @@ const HorizontalScroll = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]);
 
   return (
     <section ref={targetRef} className="relative md:h-[450vh] h-[250vh] ">
-      <div className=" flex items-center justify-center lg:h-32">
-        <span className="font-medium font-poppins uppercase mt-12 text-center text-4xl md:text-6xl pt-12 lg:pt-0">
+      <div className=" flex flex-col items-center justify-center lg:h-32">
+        <span className="font-medium font-poppins uppercase mt-14 text-center text-4xl md:text-6xl pt-12 lg:pt-0">
           Shop our collections
         </span>
       </div>

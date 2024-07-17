@@ -4,7 +4,6 @@
 // import { auth, signIn } from "@/auth.config";
 // import getSession from "@/lib/getSession";
 import React, { useState } from "react";
-// import NavigationLinks from "./NavigationLinks";
 import UserButton from "./UserButton";
 
 // imports for client side rendering
@@ -16,11 +15,11 @@ import Search from "./Search";
 import { categories } from "../navigationRoutes";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import LoginIcon from "@mui/icons-material/Login";
 import { motion } from "framer-motion";
-
 import {
   Popover,
   PopoverButton,
@@ -48,27 +47,28 @@ export default function Navigation() {
   const user = session?.data?.user;
 
   return (
-    <header className="font-poppins p-2">
-      <nav className="flex max-w-9xl items-center justify-between py-2 lg:p-4 bg-bgColor  ">
+    <header className="font-poppins">
+      <nav className="flex max-w-9xl items-center justify-between py-2 lg:p-4 bg-white  ">
         <div className="flex  justify-start">
           <Link href="/">
             <span className="sr-only">Reform</span>{" "}
             <Image
-              src="/images/Reform.png"
+              src="/images/ReformLogo2.svg"
               alt="Reform Logo"
               height={100}
               width={100}
+              className="m-2 object-cover"
             />{" "}
           </Link>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md h-40px w-40px p-2.5"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            <MenuIcon className="m-2 h-11 w-11" aria-hidden="true" />
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
@@ -81,7 +81,7 @@ export default function Navigation() {
                     <ExpandMoreIcon
                       className={`${
                         open ? "transform rotate-180" : ""
-                      } h-5 w-5 flex-none`}
+                      } h-8 w-8 flex-none p-1`}
                       aria-hidden="true"
                     />
                   </PopoverButton>
@@ -129,32 +129,38 @@ export default function Navigation() {
             )}
           </Popover>
           {links.map((link, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.1 }}>
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.1 }}
+              className="md:pt-1"
+            >
               <Link
                 href={link.href}
                 key={link.href}
                 className={`${
                   path === link.href
                     ? "text-darkPink font-semibold"
-                    : "text-gray-900"
-                }`}
+                    : "text-black"
+                } `}
               >
                 {link.label}
               </Link>
             </motion.div>
           ))}
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 gap-4 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 gap-4 lg:justify-end items-center">
           <div className="px-4">
             <Search />
           </div>
 
           {user && <UserButton user={user} />}
           {!user && session.status !== "loading" && (
-            <button onClick={() => signIn()}>Login</button>
+            <button onClick={() => signIn()}>
+              <LoginIcon className="h-7 w-7 text-darkPink" />
+            </button>
           )}
-          <FavoriteIcon className="h-10 w-10 text-smokeGrey" />
-          <ShoppingBagOutlinedIcon className="h-10 w-10 text-smokeGrey" />
+          <FavoriteBorderIcon className="h-7 w-7 text-darkPink" />
+          <ShoppingBagOutlinedIcon className="h-7 w-7 text-darkPink" />
         </div>
         <Dialog
           className="lg:hidden"
@@ -171,40 +177,40 @@ export default function Navigation() {
               >
                 {" "}
                 <Image
-                  src="/images/Reform.png"
+                  src="/images/ReformTrans.svg"
                   alt="logo"
-                  height={75}
-                  width={75}
+                  height={50}
+                  width={50}
                 />{" "}
                 <span className="sr-only">Reform</span>
               </Link>
-              <div className="px-4 m-2">
+              <div className="md:px-4 md:m-2 px-1 m-1">
                 <Search />
               </div>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 h-40px w-40px"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <CancelOutlinedIcon
-                  className="h-6 w-6 text-darkPink"
+                <CloseOutlinedIcon
+                  className="h-11 w-11 text-darkPink"
                   aria-hidden="true"
                 />
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="-my-6 divide-y">
                 <div className="space-y-2 py-6">
                   <Disclosure as="div" className="-mx-3">
                     {({ open }) => (
                       <>
-                        <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                        <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7">
                           <span>Shop</span>
                           <ExpandMoreIcon
                             className={`${
                               open ? "transform rotate-180" : ""
-                            } h-5 w-5 flex-none`}
+                            } h-6 w-6 flex-none p-2`}
                             aria-hidden="true"
                           />
                         </DisclosureButton>
