@@ -55,7 +55,7 @@ const Vests = [
 ];
 export default function FeaturedPoducts() {
   return (
-    <div className="min-h-screen bg-white px-4 py-12 font-poppins">
+    <div className=" bg-white px-4 py-12 font-poppins">
       <motion.div
         initial="initial"
         animate="animate"
@@ -117,7 +117,7 @@ const ImageGal = () => {
   const isInView = useInView(ref, { once: false });
   return (
     <Section>
-      <div className="mx-auto grid grid-rows-3 grid-cols-3 gap-6">
+      <div className="mx-auto grid grid-cols-3 gap-6">
         {Vests.map((vest) => (
           <div key={vest.id} className="relative flex flex-col items-center">
             <motion.div
