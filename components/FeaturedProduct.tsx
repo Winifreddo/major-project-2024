@@ -1,14 +1,14 @@
 "use client";
-import { duration } from "@mui/material";
 import React, { useRef } from "react";
 import { motion, MotionProps, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
+import Section from "./Section";
 
-type SectionProps = {
-  className?: string;
-} & MotionProps;
+// type SectionProps = {
+//   className?: string;
+// } & MotionProps;
 
 const Vests = [
   {
@@ -33,7 +33,7 @@ const Vests = [
     id: 4,
     name: "Grace Gilet",
     imageUrl: "/images/gilet4.svg",
-    price: "£89",
+    price: "£79",
   },
   {
     id: 5,
@@ -41,16 +41,12 @@ const Vests = [
     imageUrl: "/images/gilet5.svg",
     price: "£99",
   },
-  //   {
-  //     id: 6,
-  //     name: "Luna Gilet",
-  //     imageUrl: "/images/gilet6.svg",
-  //     price: "£89",
-  //   },
+
   {
     id: 6,
-    name: "Clara Gilet",
+    name: "Grace Gilet",
     imageUrl: "/images/gilet7.svg",
+    price: "£79",
   },
 ];
 export default function FeaturedPoducts() {
@@ -69,24 +65,24 @@ export default function FeaturedPoducts() {
   );
 }
 
-const Section = ({ className, ...rest }: SectionProps) => {
-  return (
-    <motion.div
-      variants={{
-        initial: { opacity: 0, y: 50, scale: 0.5 },
-        animate: { opacity: 1, y: 0, scale: 1 },
-      }}
-      transition={{
-        type: "spring",
-        damping: 50,
-        stiffness: 500,
-        mass: 3,
-      }}
-      className={twMerge("col-span-6", className)}
-      {...rest}
-    />
-  );
-};
+// const Section = ({ className, ...rest }: SectionProps) => {
+//   return (
+//     <motion.div
+//       variants={{
+//         initial: { opacity: 0, y: 50, scale: 0.5 },
+//         animate: { opacity: 1, y: 0, scale: 1 },
+//       }}
+//       transition={{
+//         type: "spring",
+//         damping: 50,
+//         stiffness: 500,
+//         mass: 3,
+//       }}
+//       className={twMerge("col-span-6", className)}
+//       {...rest}
+//     />
+//   );
+// };
 
 const Intro = () => {
   const ref = useRef(null);
@@ -98,7 +94,7 @@ const Intro = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         initial={{ opacity: 0, y: 50, scale: 0.5 }}
         animate={isInView ? "animate" : "initial"}
-        transition={{ type: "spring", damping: 50, stiffness: 500, mass: 3 }}
+        transition={{ type: "spring", damping: 50, stiffness: 200, mass: 3 }}
         className="col-span-12 md:col-span-8"
       >
         <div className="font-medium uppercase text-center text-4xl md:text-6xl">
@@ -127,7 +123,7 @@ const ImageGal = () => {
               transition={{
                 type: "spring",
                 damping: 50,
-                stiffness: 500,
+                stiffness: 200,
                 mass: 3,
               }}
               whileHover={{

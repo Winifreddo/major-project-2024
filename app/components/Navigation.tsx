@@ -47,8 +47,8 @@ export default function Navigation() {
   const user = session?.data?.user;
 
   return (
-    <header className="font-poppins p-2">
-      <nav className="flex max-w-9xl items-center justify-between py-2 lg:p-4 bg-bgColor  ">
+    <header className="font-poppins">
+      <nav className="flex max-w-9xl items-center justify-between py-2 lg:p-4 bg-white  ">
         <div className="flex  justify-start">
           <Link href="/">
             <span className="sr-only">Reform</span>{" "}
