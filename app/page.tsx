@@ -6,6 +6,7 @@ import ShoppingCat from "@/components/ShoppingCat";
 import FeaturedMaterials from "@/components/FeaturedMaterials";
 import FeaturedPoducts from "@/components/FeaturedProduct";
 import ShuffleHero from "@/components/ImageGal";
+import Socials from "@/components/Socials";
 
 // async function getUser() {
 //   const user = await prisma.user.findMany({
@@ -24,8 +25,10 @@ export default async function Home() {
 
       <ShuffleHero />
       <FeaturedPoducts />
-      <ShoppingCat />
       <FeaturedMaterials />
+      <Socials />
+      <ShoppingCat />
+
       {/* <SmoothScroll /> */}
     </main>
   );

@@ -1,9 +1,9 @@
 "use client";
 import React, { useRef } from "react";
-import { motion, MotionProps, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { twMerge } from "tailwind-merge";
+
 import Section from "./Section";
 
 // type SectionProps = {
@@ -13,9 +13,9 @@ import Section from "./Section";
 const Vests = [
   {
     id: 1,
-    name: "Jackie Gilet",
+    name: "Lola Gilet",
     imageUrl: "/images/gilet1.svg",
-    price: "£89",
+    price: "£99",
   },
   {
     id: 2,
@@ -98,7 +98,7 @@ const Intro = () => {
         className="col-span-12 md:col-span-8"
       >
         <div className="font-medium uppercase text-center text-4xl md:text-6xl">
-          <h2 className="Gilet">gilets</h2>
+          <h2 className="headings">gilets</h2>
           <p className="font-thin font-poppins text-xl md:text-2xl">
             the vest kept secret?
           </p>

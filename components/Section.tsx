@@ -1,8 +1,6 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, MotionProps, useInView } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
+import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
 type SectionProps = {
@@ -10,10 +8,5 @@ type SectionProps = {
 } & MotionProps;
 
 export default function Section({ className, ...rest }: SectionProps) {
-  return (
-    <motion.div
-      className={twMerge("flex flex-col gap-4 mx-auto max-w-6xl", className)}
-      {...rest}
-    />
-  );
+  return <motion.div className={twMerge("", className)} {...rest} />;
 }

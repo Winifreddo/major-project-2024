@@ -156,11 +156,11 @@ export default function Navigation() {
           {user && <UserButton user={user} />}
           {!user && session.status !== "loading" && (
             <button onClick={() => signIn()}>
-              <LoginIcon className="h-7 w-7 text-darkPink" />
+              <LoginIcon className="h-7 w-7 " />
             </button>
           )}
-          <FavoriteBorderIcon className="h-7 w-7 text-darkPink" />
-          <ShoppingBagOutlinedIcon className="h-7 w-7 text-darkPink" />
+          <FavoriteBorderIcon className="h-7 w-7 " />
+          <ShoppingBagOutlinedIcon className="h-7 w-7 " />
         </div>
         <Dialog
           className="lg:hidden"
