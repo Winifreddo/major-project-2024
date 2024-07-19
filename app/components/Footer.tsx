@@ -21,7 +21,7 @@ const shoppingLinks = [
 const Footer = () => {
   return (
     <section
-      className="flex md:flex-row flex-col p-4 justify-items-center md:justify-evenly justify-self-center bg-stoneLight
+      className="flex md:flex-row flex-col p-4 justify-items-center md:justify-evenly justify-self-center bg-bgColor
      font-poppins font-normal leading-10 "
     >
       <div>

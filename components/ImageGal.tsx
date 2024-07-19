@@ -18,7 +18,7 @@ const ShuffleHero = () => {
           and creating for the here and now. We love all things fashion and
           we&#39;re here to help you stay fashionable and sustainable!
         </p>
-        <button className="bg-darkPink text-stoneLight font-medium py-2 px-4 rounded transition-all hover:bg-salmonPink hover:text-black active:scale-95">
+        <button className="bg-smokeGrey text-stoneLight font-medium py-2 px-4 rounded transition-all hover:bg-salmonPink hover:text-black active:scale-95">
           <Link href="/FAQs"> Learn More About our journey</Link>
         </button>
       </div>
