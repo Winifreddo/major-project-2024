@@ -46,7 +46,7 @@ export default async function page({
     },
   });
   return (
-    <div>
+    <div className="bg-white">
       <Products products={products} />
       {/* <h1>{category}</h1>
       <ul>

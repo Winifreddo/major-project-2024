@@ -65,25 +65,6 @@ export default function FeaturedPoducts() {
   );
 }
 
-// const Section = ({ className, ...rest }: SectionProps) => {
-//   return (
-//     <motion.div
-//       variants={{
-//         initial: { opacity: 0, y: 50, scale: 0.5 },
-//         animate: { opacity: 1, y: 0, scale: 1 },
-//       }}
-//       transition={{
-//         type: "spring",
-//         damping: 50,
-//         stiffness: 500,
-//         mass: 3,
-//       }}
-//       className={twMerge("col-span-6", className)}
-//       {...rest}
-//     />
-//   );
-// };
-
 const Intro = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -97,7 +78,7 @@ const Intro = () => {
         transition={{ type: "spring", damping: 50, stiffness: 200, mass: 3 }}
         className="col-span-12 md:col-span-8"
       >
-        <div className="font-medium uppercase text-center text-4xl md:text-6xl">
+        <div className="font-medium uppercase text-center text-4xl">
           <h2 className="headings">gilets</h2>
           <p className="font-thin font-poppins text-xl md:text-2xl">
             the vest kept secret?
