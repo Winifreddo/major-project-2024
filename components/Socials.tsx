@@ -26,7 +26,7 @@ const Intro = () => {
         className="col-span-12 md:col-span-8"
       >
         <div className="font-medium uppercase text-center text-4xl md:text-6xl">
-          <h2 className="headings">We're social</h2>
+          <h2 className="headings">We&#39;re social</h2>
           <p className="font-thin font-poppins text-xl md:text-2xl">
             Check out our Re-formers!
           </p>
