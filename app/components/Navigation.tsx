@@ -101,7 +101,10 @@ export default function Navigation() {
                         } hover:rounded-md transition hover:opacity-85`}
                       >
                         <Link
-                          href={`/shop/${category.category}`}
+                          href={{
+                            pathname: `/shop/${category.category}`,
+                            query: { category: category.category },
+                          }}
                           onClick={() => setIsPopoverOpen(false)}
                         >
                           <Image
@@ -113,7 +116,10 @@ export default function Navigation() {
                           />
                         </Link>
                         <Link
-                          href={`/shop/${category.category}`}
+                          href={{
+                            pathname: `/shop/${category.category}`,
+                            query: { category: category.category },
+                          }}
                           key={index}
                           onClick={() => setIsPopoverOpen(false)}
                         >
@@ -177,7 +183,7 @@ export default function Navigation() {
               >
                 {" "}
                 <Image
-                  src="/images/ReformTrans.svg"
+                  src="/images/ReformLogo2.svg"
                   alt="logo"
                   height={50}
                   width={50}
@@ -223,7 +229,11 @@ export default function Navigation() {
                               >
                                 <Link
                                   key={index}
-                                  href={`/shop/${category.category}`}
+                                  // href={`/shop/${category.category}`}
+                                  href={{
+                                    pathname: `/shop/${category.category}`,
+                                    query: { category: category.category },
+                                  }}
                                   className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink hover:rounded-md"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >

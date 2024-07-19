@@ -142,37 +142,40 @@ model CartItems {
 }
 
 model Product {
-  id             Int            @id @default(autoincrement())
-  productName    String
-  price          Int
-  colour         String
-  category       String
-  subCategory    String
-  images         ProductImages?
-  description    String
-  material       String
-  materialSource String
-  madeIn         String
-  wishlistId     Int?
-  cartId         Int?           @unique
+  id                Int     @id @default(autoincrement())
+  productName       String
+  price             Int
+  colour            String
+  category          String
+  subCategory       String
+  // images         ProductImages?
+  productImageOne   String
+  productImageTwo   String
+  productImageThree String?
+  description       String
+  material          String
+  materialSource    String
+  madeIn            String
+  wishlistId        Int?
+  cartId            Int?    @unique
 
   @@map(name: "products")
 }
 
-model ProductImages {
-  id        Int                @id @default(autoincrement())
-  product   Product            @relation(fields: [productId], references: [id])
-  productId Int                @unique
-  imageUrl  ProductImageLink[]
+// model ProductImages {
+//   id        Int                @id @default(autoincrement())
+//   product   Product            @relation(fields: [productId], references: [id])
+//   productId Int                @unique
+//   imageUrl  ProductImageLink[]
 
-  @@map(name: "product_images")
-}
+//   @@map(name: "product_images")
+// }
 
-model ProductImageLink {
-  id              Int           @id @default(autoincrement())
-  productImages   ProductImages @relation(fields: [productImagesId], references: [id])
-  productImagesId Int
-  imageUrl        String
+// model ProductImageLink {
+//   id              Int           @id @default(autoincrement())
+//   productImages   ProductImages @relation(fields: [productImagesId], references: [id])
+//   productImagesId Int
+//   imageUrl        String
 
-  @@map(name: "product_image_links")
-}
+//   @@map(name: "product_image_links")
+// }
