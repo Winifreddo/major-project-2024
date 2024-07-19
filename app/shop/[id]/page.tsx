@@ -1,6 +1,6 @@
 import Image from "next/image";
-
 import prisma from "@/lib/prisma";
+import Products from "@/app/components/Products";
 
 type Product = {
   id: number;
@@ -47,7 +47,8 @@ export default async function page({
   });
   return (
     <div>
-      <h1>{category}</h1>
+      <Products products={products} />
+      {/* <h1>{category}</h1>
       <ul>
         {products.map((product) => (
           <li key={product.id}>
@@ -61,7 +62,7 @@ export default async function page({
             />
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
