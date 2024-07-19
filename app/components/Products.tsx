@@ -32,7 +32,7 @@ export default function Products({ products }: { products: Product[] }) {
           </h1>
           <p className="text-center font-thin max-w-3xl text-lg p-4 pb-12">
             Get ready to celebrate your unique style with our range of{" "}
-            {category}! There's something for everyone in our stunning
+            {category}! There&#39;s something for everyone in our stunning
             collection of {category}.
           </p>
         </div>
