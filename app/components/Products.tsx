@@ -1,9 +1,11 @@
 "use client";
-import React, { use } from "react";
+import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import "/public/fonts/fonts.css";
+import AddToCart from "./AddToCart";
 
 type Product = {
   id: number;
@@ -24,19 +26,19 @@ export default function Products({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 bg-white font-poppins">
+    <div className="mx-auto max-w-7xl px-4 md:py-12 bg-white font-poppins">
       <div>
         <div className=" flex flex-col text-center items-center">
-          <h1 className="font-medium uppercase text-center text-6xl p-8">
+          <h1 className="font-medium uppercase text-center md:text-6xl text-2xl p-8">
             {category}
           </h1>
-          <p className="text-center font-thin max-w-3xl text-lg p-4 pb-12">
+          <p className="text-center font-thin max-w-3xl md:text-lg text-md p-4 pb-12">
             Get ready to celebrate your unique style with our range of{" "}
             {category}! There&#39;s something for everyone in our stunning
-            collection of {category}.
+            collections.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
           {products.map((product) => (
             <div key={product.id}>
               <Link
@@ -52,10 +54,13 @@ export default function Products({ products }: { products: Product[] }) {
                   height={564}
                 />
               </Link>
-              <div className="flex justify-around">
+              <div className="flex flex-col items-start py-3 font-thin w-full">
                 {" "}
-                <p className="font-semibold">{product.productName}</p>
-                <p className="font-medium">£{product.price}</p>
+                <div className=" flex items-center justify-between md:text-sm text-xs w-full font-medium py-2">
+                  <p className="body">{product.productName}</p>
+                  <AddToCart />
+                </div>
+                <p className="md:text-lg text-md">£{product.price}</p>
               </div>
             </div>
           ))}

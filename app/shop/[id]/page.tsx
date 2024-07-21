@@ -26,7 +26,7 @@ export default async function page({
   searchParams: { category: string };
 }) {
   const { category } = searchParams;
-  console.log(category);
+  // console.log(category);
   const products = await prisma.product.findMany({
     where: { category: category },
     select: {
