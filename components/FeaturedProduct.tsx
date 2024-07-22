@@ -50,14 +50,14 @@ const Vests = [
   },
   {
     id: 7,
-    name: "Grace Gilet",
-    imageUrl: "/images/gilet7.svg",
+    name: "Paloma Gilet",
+    imageUrl: "/images/gilet8.svg",
     price: "£79",
   },
   {
     id: 8,
-    name: "Grace Gilet",
-    imageUrl: "/images/gilet7.svg",
+    name: "Naomi Gilet",
+    imageUrl: "/images/gilet6.svg",
     price: "£79",
   },
 ];
@@ -120,7 +120,8 @@ const ImageGal = () => {
                 mass: 3,
               }}
               whileHover={{
-                rotate: "2.5deg",
+                rotate: vest.id % 2 === 0 ? "2.5deg" : "-2.5deg",
+
                 scale: 1.1,
               }}
             >
