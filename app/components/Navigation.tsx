@@ -68,7 +68,10 @@ export default function Navigation() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <MenuIcon className="m-2 h-11 w-11" aria-hidden="true" />
+            <MenuIcon
+              className="m-2 h-11 w-11 text-smokeGrey"
+              aria-hidden="true"
+            />
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
@@ -81,7 +84,7 @@ export default function Navigation() {
                     <ExpandMoreIcon
                       className={`${
                         open ? "transform rotate-180" : ""
-                      } h-8 w-8 flex-none p-1`}
+                      } h-8 w-8 flex-none p-1 text-smokeGrey`}
                       aria-hidden="true"
                     />
                   </PopoverButton>
@@ -94,11 +97,7 @@ export default function Navigation() {
                     {categories.map((category, index) => (
                       <div
                         key={index}
-                        className={`group relative flex flex-col p-3 m-1 text-sm leading-6  ${
-                          index % 2 == 0
-                            ? "hover:bg-salmonPink"
-                            : "hover:bg-mossGreen"
-                        } hover:rounded-md transition hover:opacity-85`}
+                        className="group relative flex flex-col p-3 m-1 text-sm leading-6 hover:bg-salmonPink hover:rounded-md transition hover:opacity-85"
                       >
                         <Link
                           href={{
@@ -162,11 +161,11 @@ export default function Navigation() {
           {user && <UserButton user={user} />}
           {!user && session.status !== "loading" && (
             <button onClick={() => signIn()}>
-              <LoginIcon className="h-7 w-7 " />
+              <LoginIcon className="h-7 w-7 text-smokeGrey" />
             </button>
           )}
-          <FavoriteBorderIcon className="h-7 w-7 " />
-          <ShoppingBagOutlinedIcon className="h-7 w-7 " />
+          <FavoriteBorderIcon className="h-7 w-7 text-smokeGrey" />
+          <ShoppingBagOutlinedIcon className="h-7 w-7 text-smokeGrey" />
         </div>
         <Dialog
           className="lg:hidden"
@@ -200,7 +199,7 @@ export default function Navigation() {
               >
                 <span className="sr-only">Close menu</span>
                 <CloseOutlinedIcon
-                  className="h-11 w-11 text-darkPink"
+                  className="h-9 w-9 text-smokeGrey"
                   aria-hidden="true"
                 />
               </button>
@@ -212,11 +211,11 @@ export default function Navigation() {
                     {({ open }) => (
                       <>
                         <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7">
-                          <span>Shop</span>
+                          <span className="px-4">Shop</span>
                           <ExpandMoreIcon
                             className={`${
-                              open ? "transform rotate-180" : ""
-                            } h-6 w-6 flex-none p-2`}
+                              open ? "transform rotate-180 text-smokeGrey" : ""
+                            } flex-none`}
                             aria-hidden="true"
                           />
                         </DisclosureButton>
@@ -229,7 +228,6 @@ export default function Navigation() {
                               >
                                 <Link
                                   key={index}
-                                  // href={`/shop/${category.category}`}
                                   href={{
                                     pathname: `/shop/${category.category}`,
                                     query: { category: category.category },
@@ -241,8 +239,8 @@ export default function Navigation() {
                                     key={index}
                                     src={category.image}
                                     alt={category.category}
-                                    width={150}
-                                    height={150}
+                                    width={100}
+                                    height={100}
                                   />
                                 </Link>
                                 <h4 className="text-center">

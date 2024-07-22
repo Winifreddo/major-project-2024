@@ -132,11 +132,11 @@ model Cart {
 }
 
 model CartItems {
-  id        Int  @id @default(autoincrement())
-  cartId    Int  @unique
-  cart      Cart @relation(fields: [cartId], references: [id])
+  id        Int    @id @default(autoincrement())
+  cartId    Int    @unique
+  cart      Cart   @relation(fields: [cartId], references: [id])
   productId Int
-  quantity  Int
+  size      String
 
   @@map(name: "cart_items")
 }

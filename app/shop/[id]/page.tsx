@@ -48,21 +48,6 @@ export default async function page({
   return (
     <div className="bg-white">
       <Products products={products} />
-      {/* <h1>{category}</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            <h2>{product.productName}</h2>
-            <p>{product.price}</p>
-            <Image
-              src={`/images/${product.productImageOne}`}
-              alt={product.productName}
-              width={200}
-              height={200}
-            />
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 }
