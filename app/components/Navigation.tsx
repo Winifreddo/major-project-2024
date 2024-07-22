@@ -239,8 +239,8 @@ export default function Navigation() {
                                     key={index}
                                     src={category.image}
                                     alt={category.category}
-                                    width={100}
-                                    height={100}
+                                    width={125}
+                                    height={125}
                                   />
                                 </Link>
                                 <h4 className="text-center">

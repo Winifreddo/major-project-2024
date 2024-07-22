@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const ShuffleHero = () => {
   return (
-    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">
-      <div>
+    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-6 max-w-8xl mx-auto">
+      <div className="text-center md:text-start">
         <span className="block mb-4 text-xs md:text-sm font-poppins font-medium">
           Better every day
         </span>
-        <h1 className="text-5xl md:text-7xl font-semibold leading-relaxed">
+        <h1 className="text-4xl md:text-7xl font-semibold leading-relaxed">
           RE- <br /> FORM
         </h1>
         <p className="text-base md:text-lg my-4 md:my-6 font-light">
@@ -18,9 +18,11 @@ const ShuffleHero = () => {
           and creating for the here and now. We love all things fashion and
           we&#39;re here to help you stay fashionable and sustainable!
         </p>
-        <button className="bg-smokeGrey text-stoneLight font-medium py-2 px-4 rounded transition-all hover:bg-salmonPink hover:text-black active:scale-95">
-          <Link href="/FAQs"> Learn More About our journey</Link>
-        </button>
+        <div className="flex justify-center md:justify-start">
+          <button className="bg-smokeGrey text-white text-xs md:text-sm font-medium py-2 px-4 rounded transition-all hover:bg-salmonPink hover:text-smokeGrey active:scale-95">
+            <Link href="/FAQs"> Learn More About our journey</Link>
+          </button>
+        </div>
       </div>
       <ShuffleGrid />
     </section>
@@ -125,7 +127,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 grid-rows-3 p-4 pb-10 gap-1">
+    <div className="grid grid-cols-3 w-full grid-rows-3 px-2 py-4 md:pb-10 gap-1">
       {squares.map((sq) => sq)}
     </div>
   );
