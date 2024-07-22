@@ -69,9 +69,7 @@ export default function FeaturedMaterials() {
         <Section className="grid md:grid-cols-2 gap-0 max-w-6xl mx-auto ">
           {Materials.map((material, index) => (
             <div
-              // whileHover={{
-              //   scale: 1.1,
-              // }}
+              key={material.id}
               className="flex flex-col items-center mx-4 mb-4 md:m-0 "
             >
               <div
