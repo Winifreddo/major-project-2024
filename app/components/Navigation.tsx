@@ -57,7 +57,7 @@ export default function Navigation() {
               alt="Reform Logo"
               height={100}
               width={100}
-              className="m-2 object-cover"
+              className="m-2 mt-4 p-1 object-cover"
             />{" "}
           </Link>
         </div>
