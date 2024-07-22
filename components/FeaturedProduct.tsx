@@ -48,6 +48,18 @@ const Vests = [
     imageUrl: "/images/gilet7.svg",
     price: "£79",
   },
+  {
+    id: 7,
+    name: "Grace Gilet",
+    imageUrl: "/images/gilet7.svg",
+    price: "£79",
+  },
+  {
+    id: 8,
+    name: "Grace Gilet",
+    imageUrl: "/images/gilet7.svg",
+    price: "£79",
+  },
 ];
 export default function FeaturedPoducts() {
   return (
@@ -70,7 +82,7 @@ const Intro = () => {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <div ref={ref} className="py-14">
+    <div ref={ref} className="md:py-14 py-8">
       <Section
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         initial={{ opacity: 0, y: 50, scale: 0.5 }}
@@ -78,9 +90,9 @@ const Intro = () => {
         transition={{ type: "spring", damping: 50, stiffness: 200, mass: 3 }}
         className="col-span-12 md:col-span-8"
       >
-        <div className="font-medium uppercase text-center text-4xl">
+        <div className="font-medium uppercase text-center text-3xl md:text-4xl">
           <h2 className="headings">gilets</h2>
-          <p className="font-thin font-poppins text-xl md:text-2xl">
+          <p className="font-thin font-poppins pt-2 text-lg md:text-2xl">
             the vest kept secret?
           </p>
         </div>
@@ -94,7 +106,7 @@ const ImageGal = () => {
   const isInView = useInView(ref, { once: false });
   return (
     <Section>
-      <div className="mx-auto grid grid-cols-3 gap-6">
+      <div className="mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
         {Vests.map((vest) => (
           <div key={vest.id} className="relative flex flex-col items-center">
             <motion.div
@@ -121,8 +133,10 @@ const ImageGal = () => {
               />
             </motion.div>
 
-            <div className="flex flex-col items-center mt-4">
-              <h3 className="text-lg font-semibold">{vest.name}</h3>
+            <div className="flex flex-col items-center md:mt-4">
+              <h3 className=" text-md md:text-lg mt-1 font-semibold">
+                {vest.name}
+              </h3>
               <Link href="#" className="text-sm font-thin">
                 {vest.price}
               </Link>
