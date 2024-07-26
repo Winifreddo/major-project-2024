@@ -165,32 +165,15 @@ model Product {
 model Blog {
   id        Int      @id @default(autoincrement())
   title     String
+  intro     String
   content   String
   content2  String?
+  content3  String?
   imageUrl  String
   imageUrl2 String?
   imageUrl3 String?
-  imageUrl4 String?
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @updatedAt @map(name: "updated_at")
 
   @@map(name: "blogs")
 }
-
-// model ProductImages {
-//   id        Int                @id @default(autoincrement())
-//   product   Product            @relation(fields: [productId], references: [id])
-//   productId Int                @unique
-//   imageUrl  ProductImageLink[]
-
-//   @@map(name: "product_images")
-// }
-
-// model ProductImageLink {
-//   id              Int           @id @default(autoincrement())
-//   productImages   ProductImages @relation(fields: [productImagesId], references: [id])
-//   productImagesId Int
-//   imageUrl        String
-
-//   @@map(name: "product_image_links")
-// }

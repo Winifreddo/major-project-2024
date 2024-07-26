@@ -7,8 +7,10 @@ import BlogPosts from "@/components/BlogPosts";
 type BlogPost = {
   id: number;
   title: string;
+  intro: string;
   content: string;
   content2: string | null;
+  content3: string | null;
   imageUrl: string;
   imageUrl2: string | null;
   imageUrl3: string | null;
@@ -21,8 +23,10 @@ export default async function page() {
     select: {
       id: true,
       title: true,
+      intro: true,
       content: true,
       content2: true,
+      content3: true,
       imageUrl: true,
       imageUrl2: true,
       imageUrl3: true,
