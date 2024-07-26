@@ -64,7 +64,14 @@ const BlogPosts: React.FC<BlogPostsProps> = ({ posts }) => {
               </h2>
               <p className="p-4 text-sm">{post.intro}</p>
               <button className="bg-smokeGrey text-white font-poppins font-thin px-6 py-2 w-32 mx-auto mt-4 rounded-sm text-sm">
-                <Link href={`/blog/${post.id}`}>Read More</Link>
+                <Link
+                  href={{
+                    pathname: `/blog/${post.id}`,
+                    query: { id: post.id },
+                  }}
+                >
+                  Read More
+                </Link>
               </button>
             </div>
           </motion.div>

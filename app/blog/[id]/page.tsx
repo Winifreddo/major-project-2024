@@ -1,7 +1,40 @@
 import React from "react";
+import IndividualBlogPosts from "@/components/IndividualBlogPosts";
+import prisma from "@/lib/prisma";
 
-const page = () => {
-  return <div>I am blog page</div>;
-};
+export default async function page({
+  searchParams,
+}: {
+  searchParams: { id: string };
+}) {
+  const blogId = searchParams.id;
+  const blog = parseInt(blogId);
 
-export default page;
+  console.log(blog);
+
+  const blogPost = await prisma.blog.findUnique({
+    where: {
+      id: blog,
+    },
+    select: {
+      id: true,
+      title: true,
+      intro: true,
+      content: true,
+      content2: true,
+      content3: true,
+      imageUrl: true,
+      imageUrl2: true,
+      imageUrl3: true,
+      createdAt: true,
+    },
+  });
+
+  console.log(blogPost);
+  return (
+    <div>
+      <h1></h1>
+      {blogPost && <IndividualBlogPosts blogpost={blogPost} />}
+    </div>
+  );
+}
