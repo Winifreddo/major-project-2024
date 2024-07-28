@@ -19,13 +19,12 @@ type Product = {
 };
 
 export default async function page({
-  params,
   searchParams,
 }: {
-  params: { category: string };
   searchParams: { category: string };
 }) {
-  const { category } = searchParams;
+  const category = searchParams.category;
+  console.log(category);
   // console.log(category);
   const products = await prisma.product.findMany({
     where: { category: category },
@@ -45,6 +44,7 @@ export default async function page({
       madeIn: true,
     },
   });
+  console.log(products);
   return (
     <div className="bg-white">
       <Products products={products} />

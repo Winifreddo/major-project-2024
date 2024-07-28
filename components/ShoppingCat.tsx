@@ -85,14 +85,7 @@ const Card = ({ card }: { card: CardType }) => {
       className="group relative md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] h-[200px] w-[200px] overflow-hidden"
     >
       <img src={card.imageUrl} alt={card.title} className="object-cover" />
-      {/* <div
-        style={{
-          backgroundImage: `url(${card.imageUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div> */}
+
       <div className="absolute inset-0 z-10 grid place-content-center">
         <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 md:text-6xl text-2xl font-poppins font-semibold uppercase text-white backdrop-blur-lg">
           {card.title}
@@ -100,7 +93,10 @@ const Card = ({ card }: { card: CardType }) => {
         <button>
           <Link
             className="bg-black text-white font-poppins px-4 py-2 rounded-b-lg"
-            href={`/shop/${card.category}`}
+            href={{
+              pathname: `/shop/${card.category}`,
+              query: { category: card.category },
+            }}
           >
             Shop now
           </Link>

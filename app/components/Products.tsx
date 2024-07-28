@@ -26,7 +26,7 @@ export default function Products({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   return (
-    <div className="mx-auto max-w-7xl px-4 md:py-12 bg-white font-poppins">
+    <div className="mx-auto max-w-6xl px-4 md:py-12 bg-white font-poppins">
       <div>
         <div className=" flex flex-col text-center items-center">
           <h1 className="font-medium uppercase text-center md:text-6xl text-2xl p-8">
