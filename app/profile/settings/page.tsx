@@ -23,7 +23,7 @@ export default async function page() {
   if (!user) {
     redirect("/api/auth/signin?callbackUrl=/profile/settings");
   } else {
-    console.log(response);
+    console.log("hello");
   }
 
   return (

@@ -13,8 +13,8 @@ export default async function DashboardNavigation() {
   }
   return (
     <section>
-      <nav>
-        <ul className="flex flex-col">
+      <nav className="py-16 px-8 font-poppins text-xl">
+        <ul className="flex flex-col ">
           <li>
             <Link href="/profile">Dashboard</Link>
           </li>

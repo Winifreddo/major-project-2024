@@ -2,21 +2,21 @@ import Image from "next/image";
 import prisma from "@/lib/prisma";
 import Products from "@/app/components/Products";
 
-type Product = {
-  id: number;
-  productName: string;
-  price: number;
-  colour: string;
-  category: string;
-  subCategory: string;
-  productImageOne: string;
-  productImageTwo: string;
-  productImageThree: string | null;
-  description: string;
-  material: string;
-  materialSource: string;
-  madeIn: string;
-};
+// type Product = {
+//   id: number;
+//   productName: string;
+//   price: number;
+//   colour: string;
+//   category: string;
+//   subCategory: string;
+//   productImageOne: string;
+//   productImageTwo: string;
+//   productImageThree: string | null;
+//   description: string;
+//   material: string;
+//   materialSource: string;
+//   madeIn: string;
+// };
 
 export default async function page({
   searchParams,

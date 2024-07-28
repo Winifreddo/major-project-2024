@@ -63,6 +63,25 @@ model VerificationToken {
   @@id([identifier, token])
 }
 
+model Wishlist {
+  id            Int             @id @default(autoincrement())
+  profileId     Int             @unique
+  profile       Profile         @relation(fields: [profileId], references: [id])
+  wishlistItems WishlistItems[]
+
+  @@map(name: "wishlists")
+}
+
+model WishlistItems {
+  id         Int      @id @default(autoincrement())
+  wishlistId Int      @unique
+  wishlist   Wishlist @relation(fields: [wishlistId], references: [id])
+  productId  Int
+  quantity   Int
+
+  @@map(name: "wishlist_items")
+}
+
 model Profile {
   id          Int       @id @default(autoincrement())
   user        User      @relation(fields: [userId], references: [id])
@@ -81,25 +100,6 @@ model Profile {
   cartId      Int?      @unique
 
   @@map(name: "profiles")
-}
-
-model Wishlist {
-  id            Int             @id @default(autoincrement())
-  profileId     Int             @unique
-  profile       Profile         @relation(fields: [profileId], references: [id])
-  wishlistItems WishlistItems[]
-
-  @@map(name: "wishlists")
-}
-
-model WishlistItems {
-  id         Int      @id @default(autoincrement())
-  wishlistId Int      @unique
-  wishlist   Wishlist @relation(fields: [wishlistId], references: [id])
-  productId  Int
-  quantity   Int
-
-  @@map(name: "wishlist_items")
 }
 
 model Order {
