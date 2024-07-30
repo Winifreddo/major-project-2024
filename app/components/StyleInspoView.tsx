@@ -152,7 +152,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
           {" "}
           <span className="C">H</span>ave you ever looked at your clothes and
           thought I have nothing to wear? Even though you have enough clothes to
-          rival any clothes shop? Us too! That's why we've created a
+          rival any clothes shop? Us too! That&#39;s why we&#39;ve created a
           personalised Style Inspiration column. Our old pieces can be just as
           wonderful as our new ones and all it takes is a bit of re-imagining!
         </p>
@@ -160,8 +160,8 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
           Simply select any item you have previously purchased with us (there is
           no time limit, they could be items purchased 2 years ago!) and we will
           give you ideas how to style it using items you most probably already
-          own. As we say here at Reform, It's not about the clothes, it's about
-          how you wear them! <br />
+          own. As we say here at Reform, It&#39;s not about the clothes,
+          it&#39;s about how you wear them! <br />
           <b> Peace and love, The Reform Team x </b>
         </p>
         {/* </div> */}
