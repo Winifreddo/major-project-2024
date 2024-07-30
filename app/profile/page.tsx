@@ -21,12 +21,18 @@ export default async function page() {
 
   return (
     <div className="font-poppins p-16 text-center max-w-6xl mx-auto leading-loose">
-      <h1 className="font-poppins text-4xl font-semibold">
-        Welcome {profile?.firstName}
-      </h1>
+      <h1 className=" text-4xl font-semibold">Welcome {profile?.firstName}</h1>
       <p className="p-2">What would you like to do today?</p>
 
-      <div className="grid md:grid-cols-3 grid-cols-1 place-items-center p-8 gap-6 text-center shadow-md rounded-md overflow-y-scroll">
+      <div
+        className="grid md:grid-cols-3 grid-cols-1 place-items-center p-8 gap-6 text-center shadow-md rounded-md overflow-y-scroll"
+        style={{
+          backgroundImage: "url('/images/accountbg2.svg')",
+          backgroundSize: "fill",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="flex flex-col shadow-md w-full justify-center p-8 text-sm rounded-md h-56 bg-salmonPink ">
           <h2 className="font-semibold text-xl underline">Orders</h2>
           <Link href="/profile/orders" className="py-2">

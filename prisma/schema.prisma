@@ -125,6 +125,7 @@ model OrderItem {
 
 model StyleInspo {
   id          Int       @id @default(autoincrement())
+  itemName    String
   imageUrl    String
   imageUrl2   String
   orderItemId Int       @unique
