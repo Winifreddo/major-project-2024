@@ -23,9 +23,9 @@ const Intro = () => {
         initial={{ opacity: 0, y: 50, scale: 0.5 }}
         animate={isInView ? "animate" : "initial"}
         transition={{ type: "spring", damping: 50, stiffness: 200, mass: 3 }}
-        className="col-span-12 md:col-span-8"
+        className="col-span-12 md:col-span-8 bg-white p-16"
       >
-        <div className="font-medium uppercase text-center text-4xl md:text-6xl">
+        <div className="font-medium uppercase text-center text-2xl md:text-4xl">
           <h2 className="headings">We&#39;re social</h2>
           <p className="font-thin font-poppins text-xl md:text-2xl">
             Check out our Re-formers!

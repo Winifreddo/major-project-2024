@@ -59,7 +59,7 @@ export default function FeaturedMaterials() {
         >
           <div className="font-medium uppercase p-4 pb-0 lg:pb-4 text-center text-2xl md:text-4xl leading-relaxed">
             <h2 className="headings">Our promise to you</h2>
-            <p className="font-thin font-poppins pt-2 text-lg md:text-2xl">
+            <p className="font-thin font-poppins py-4 text-lg md:text-2xl">
               Twill You Be Impressed? Our Clothes Say Yes!
             </p>
           </div>

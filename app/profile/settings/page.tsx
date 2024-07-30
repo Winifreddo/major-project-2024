@@ -5,6 +5,7 @@ import SettingsPage from "@/app/components/SettingsPage";
 import { redirect } from "next/navigation";
 import getSession from "@/lib/getSession";
 import prisma from "@/lib/prisma";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Settings",
@@ -28,7 +29,9 @@ export default async function page() {
 
   return (
     <div>
-      {" "}
+      <Link href="/profile" className="p-4">
+        Back to Dashboard
+      </Link>{" "}
       {/* pass the response object from the db request */}
       <SettingsPage user={response} />
     </div>

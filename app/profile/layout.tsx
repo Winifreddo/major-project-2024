@@ -7,10 +7,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="w-screen bg-white">
-      <Link href="/profile">Back to Dashboard</Link>
-      {/* <DashboardNavigation /> */}
-      <div className="max-5xl items-center"> {children}</div>
+    <main className=" bg-white">
+      <div className="flex">
+        <div className="w-52">
+          <DashboardNavigation />
+        </div>
+        <div className="w-3/4">{children}</div>
+      </div>
     </main>
   );
 }

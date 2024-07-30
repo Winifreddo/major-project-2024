@@ -92,7 +92,7 @@ const Intro = () => {
       >
         <div className="font-medium uppercase text-center text-3xl md:text-4xl">
           <h2 className="headings">gilets</h2>
-          <p className="font-thin font-poppins pt-2 text-lg md:text-2xl">
+          <p className="font-thin font-poppins py-4 text-lg md:text-2xl">
             the vest kept secret?
           </p>
         </div>

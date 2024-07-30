@@ -41,9 +41,9 @@ const UserButton = ({ user }: UserButtonProps) => {
           <MenuItem>
             <Link
               className="block data-[focus]:bg-salmonPink data-[focus]:rounded-md p-2 text-sm"
-              href={`/profile/account/${user?.id}`}
+              href={`/profile`}
             >
-              Account
+              My Dashboard
             </Link>
           </MenuItem>
           <MenuItem>
@@ -54,14 +54,7 @@ const UserButton = ({ user }: UserButtonProps) => {
               Orders
             </Link>
           </MenuItem>
-          <MenuItem>
-            <Link
-              className="block data-[focus]:bg-salmonPink data-[focus]:rounded-md p-2 text-sm"
-              href="/profile/settings"
-            >
-              Settings
-            </Link>
-          </MenuItem>
+
           <MenuItem>
             <button
               className="block data-[focus]:bg-salmonPink data-[focus]:rounded-md p-2 text-sm w-full text-start"

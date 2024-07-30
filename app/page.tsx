@@ -7,6 +7,7 @@ import FeaturedMaterials from "@/components/FeaturedMaterials";
 import FeaturedPoducts from "@/components/FeaturedProduct";
 import ShuffleHero from "@/components/ImageGal";
 import Socials from "@/components/Socials";
+import BlogHighlight from "@/components/BlogHighlight";
 
 export default async function Home() {
   return (
@@ -17,6 +18,7 @@ export default async function Home() {
       <FeaturedPoducts />
       <FeaturedMaterials />
       <Socials />
+      <BlogHighlight />
       <ShoppingCat />
 
       {/* <SmoothScroll /> */}
