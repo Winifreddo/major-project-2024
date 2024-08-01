@@ -4,12 +4,7 @@ import { GiCottonFlower } from "react-icons/gi";
 import { BiWorld } from "react-icons/bi";
 import { RiLeafFill } from "react-icons/ri";
 import Link from "next/link";
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxOption,
-  ComboboxOptions,
-} from "@headlessui/react";
+
 import StyleIt from "./StyleIt";
 
 type Product = {

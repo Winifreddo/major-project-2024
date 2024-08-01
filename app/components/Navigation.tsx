@@ -64,7 +64,7 @@ export default function Navigation() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md h-40px w-40px p-2.5"
+            className="inline-flex items-center justify-center rounded-md h-40px w-40px "
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
