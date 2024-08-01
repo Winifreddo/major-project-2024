@@ -274,13 +274,7 @@ export default function Navigation() {
                   >
                     About Us
                   </Link>
-                  <Link
-                    href={`/profile/account/${user?.id}`}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    My account
-                  </Link>
+
                   <Link
                     href="#"
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-salmonPink"
@@ -295,6 +289,11 @@ export default function Navigation() {
                   >
                     Basket
                   </Link>
+
+                  {user && <UserButton user={user} />}
+                  {!user && session.status !== "loading" && (
+                    <button onClick={() => signIn()}>Login</button>
+                  )}
                 </div>
               </div>
             </div>

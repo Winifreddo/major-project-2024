@@ -49,7 +49,7 @@ export default function FeaturedMaterials() {
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
   return (
     <>
-      <div ref={ref} className="py-14">
+      <div ref={ref} className="py-14 bg-white">
         <Section
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           initial={{ opacity: 0, y: 50, scale: 0.5 }}
@@ -65,7 +65,7 @@ export default function FeaturedMaterials() {
           </div>
         </Section>
       </div>
-      <div className="mx-auto max-w-8xl ">
+      <div className="mx-auto max-w-8xl bg-white ">
         <Section className="grid md:grid-cols-2 gap-0 max-w-6xl mx-auto ">
           {Materials.map((material, index) => (
             <div

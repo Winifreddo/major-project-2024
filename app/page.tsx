@@ -16,10 +16,11 @@ export default async function Home() {
 
       <ShuffleHero />
       <FeaturedPoducts />
+      <ShoppingCat />
       <FeaturedMaterials />
+
       <Socials />
       <BlogHighlight />
-      <ShoppingCat />
 
       {/* <SmoothScroll /> */}
     </main>

@@ -207,10 +207,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
                 />
                 {casualStyleAdvice &&
                   casualStyleAdvice.map((item) => (
-                    <div
-                      key={item.id}
-                      className="p-4 text-start bg-stoneLight h-full"
-                    >
+                    <div key={item.id} className="p-4 text-start h-full">
                       <h2>{item.title}</h2>
                       <p className="my-4">{item.advice}</p>
                       <p className="font-medium italic">
