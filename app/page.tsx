@@ -18,8 +18,6 @@ export default async function Home() {
       <FeaturedPoducts />
       <ShoppingCat />
       <FeaturedMaterials />
-
-      <Socials />
       <BlogHighlight />
 
       {/* <SmoothScroll /> */}

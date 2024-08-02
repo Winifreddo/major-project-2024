@@ -6,10 +6,6 @@ import { useInView } from "framer-motion";
 import "/public/fonts/fonts.css";
 import ProductDetails from "@/app/components/ProductDetails";
 import IndividualProdImageGal from "./IndividualProdImageGal";
-import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
-import { GiCottonFlower } from "react-icons/gi";
-import { BiWorld } from "react-icons/bi";
-import { RiLeafFill } from "react-icons/ri";
 
 type Product = {
   id: number;

@@ -64,7 +64,7 @@ const BlogPosts: React.FC<BlogPostsProps> = ({ posts }) => {
               </h2>
               <p>{post.createdAt.toDateString()}</p>
               <p className="p-4 text-sm">{post.intro}</p>
-              <button className="bg-smokeGrey text-white font-poppins font-thin px-6 py-2 w-32 mx-auto mt-4 rounded-sm text-sm">
+              <button className="bg-smokeGrey text-white hover:bg-salmonPink hover:text-smokeGrey font-poppins px-6 py-2 w-32 mx-auto mt-4 rounded-sm text-sm">
                 <Link
                   href={{
                     pathname: `/blog/${post.id}`,
