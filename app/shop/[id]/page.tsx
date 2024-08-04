@@ -1,7 +1,7 @@
 import Image from "next/image";
 import prisma from "@/lib/prisma";
 import Products from "@/app/components/Products";
-
+import { Metadata } from "next";
 // type Product = {
 //   id: number;
 //   productName: string;
@@ -17,6 +17,9 @@ import Products from "@/app/components/Products";
 //   materialSource: string;
 //   madeIn: string;
 // };
+export const metadata: Metadata = {
+  title: "Shop",
+};
 
 export default async function page({
   searchParams,

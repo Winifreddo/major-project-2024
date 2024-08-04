@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import prisma from "@/lib/prisma";
 import getSession from "@/lib/getSession";
 import StyleInspoView from "@/app/components/StyleInspoView";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Style Inspiration",
+};
 
 type StyleInspoProps = {
   id: number;

@@ -60,7 +60,7 @@ export default function Products({ products }: { products: Product[] }) {
                   <p className="body">{product.productName}</p>
                   <AddToCart />
                 </div>
-                <p className="md:text-lg text-md">£{product.price}</p>
+                <p className="md:text-lg text-md">£{product.price}.00</p>
               </div>
             </div>
           ))}

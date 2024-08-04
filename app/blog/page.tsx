@@ -1,6 +1,10 @@
 import React from "react";
 import prisma from "@/lib/prisma";
 import BlogPosts from "@/components/BlogPosts";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 // specify the type of the data that will be returned from the query
 

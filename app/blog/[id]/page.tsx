@@ -1,6 +1,10 @@
 import React from "react";
 import IndividualBlogPosts from "@/components/IndividualBlogPosts";
 import prisma from "@/lib/prisma";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 export default async function page({
   searchParams,
