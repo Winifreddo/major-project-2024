@@ -136,7 +136,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
   };
   return (
     <div className="font-poppins p-16 mb-8 text-center max-w-7xl mx-auto leading-loose">
-      <h1 className="text-4xl font-poppins p-4 font-semibold">
+      <h1 className="md:text-4xl text-2xl p-4 font-semibold">
         Style Inspiration
       </h1>
       <div

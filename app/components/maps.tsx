@@ -1,9 +1,10 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
-import { Library, Loader } from "@googlemaps/js-api-loader";
+import { Library } from "@googlemaps/js-api-loader";
 import { useJsApiLoader } from "@react-google-maps/api";
-import { Zoom } from "@mui/material";
+import { IoBusinessSharp } from "react-icons/io5";
+import { FaLocationDot } from "react-icons/fa6";
 
 const libs: Library[] = ["core", "maps", "places", "marker"];
 
@@ -14,15 +15,15 @@ const mapInfoCard = (title: string, content: string) => {
     </div>`;
 };
 
-// TODO: STYLE MAP AND AUTO COMPLETE
-
 export default function Maps() {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [autocomplete, setAutocomplete] =
     useState<google.maps.places.Autocomplete | null>(null);
   // const [place, setPlace] = useState<google.maps.places.PlaceResult | null>(null);
   const [selectedPlace, setSelectedPlace] = useState<string | null>(null);
-  const [repairServices, setRepairServices] = useState<string | null>(null);
+  const [repairServices, setRepairServices] = useState<
+    { name: string | undefined; address: string | undefined }[] | null
+  >(null);
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
@@ -32,6 +33,7 @@ export default function Maps() {
   const mapRef = React.useRef<HTMLDivElement>(null);
   const placeAutocompleteRef = React.useRef<HTMLInputElement>(null);
 
+  //   generate map
   useEffect(() => {
     if (isLoaded) {
       const mapOptions = {
@@ -67,33 +69,36 @@ export default function Maps() {
     }
   }, [isLoaded]);
 
+  //   autocomplete
+
   useEffect(() => {
     if (autocomplete) {
       autocomplete.addListener("place_changed", () => {
         const place = autocomplete.getPlace();
-        // if (!place.geometry || !place.geometry.location) {
-        //   return;
-        // }
+
         setSelectedPlace(place.formatted_address as string);
         const position = place.geometry?.location;
 
         if (position) {
-          setMarker(position, place.name as string);
           searchTailorServices(position);
+          if (map) {
+            map.setCenter(position);
+          }
         }
       });
     }
-  }, [autocomplete]);
+  }, [autocomplete, map]);
 
-  useEffect(() => {
-    if (repairServices && repairServices.length > 0) {
-      const service = repairServices.split(",")[0];
-      const position = new google.maps.LatLng(51.736099, 0.4798);
-      setMarker(position, service);
-    }
-  });
+  //   search for tailoring services
+  //   useEffect(() => {
+  //     if (repairServices && repairServices.length > 0) {
+  //       const service = repairServices[0]?.name?.split(",")[0];
+  //       const position = new google.maps.LatLng(51.736099, 0.4798);
+  //       setMarker(position, service);
+  //     }
+  //   });
 
-  function setMarker(position: google.maps.LatLng, name: string) {
+  function setMarker(position: google.maps.LatLng, name: string | undefined) {
     if (!map) return;
 
     map.setCenter(position);
@@ -104,7 +109,7 @@ export default function Maps() {
     });
     const infoCard = new google.maps.InfoWindow({
       position: position,
-      content: mapInfoCard(name, selectedPlace!),
+      content: mapInfoCard(name || "", selectedPlace!),
       maxWidth: 200,
     });
     infoCard.open({
@@ -126,7 +131,6 @@ export default function Maps() {
       location: position,
       radius: 5000,
       query: service.join(" OR "),
-      //   name: ,
     };
 
     if (!map) return;
@@ -136,13 +140,44 @@ export default function Maps() {
     );
     serviceRequest.textSearch(request, (results, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-        const services = results.map((result) => result.name).join(", ");
-        setRepairServices(services);
-        console.log(services);
+        const servicesWithAddresses = results.map((result) => ({
+          name: result.name,
+          address: result.formatted_address,
+        }));
+        setRepairServices(servicesWithAddresses);
+        console.log(servicesWithAddresses);
       } else {
         console.error("Places service error:", status);
       }
     });
+
+    serviceRequest.textSearch(request, (results, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+        results.forEach((result) => {
+          if (result.geometry) {
+            const marker = new google.maps.marker.AdvancedMarkerElement({
+              position: result.geometry.location,
+              map: map,
+              title: result.name,
+            });
+          }
+        });
+      } else {
+        console.error("Places service error:", status);
+      }
+    });
+
+    // serviceRequest.textSearch(request, (results, status) => {
+    //   if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+    //     const services = results.map((result) =>
+
+    //         result.name).join(", ");
+    //     setRepairServices(services);
+    //     console.log(services);
+    //   } else {
+    //     console.error("Places service error:", status);
+    //   }
+    // });
   }
 
   function displayTailoringServices(results: google.maps.places.PlaceResult[]) {
@@ -166,35 +201,57 @@ export default function Maps() {
         });
       });
     });
-
-    //   const position = result.geometry?.location;
-    //   if (position) {
-    //     if (result.name) {
-    //       setMarker(position, result.name);
-    //     }
-    //   }
   }
 
   return (
     <div>
       <div>
-        <input
-          ref={placeAutocompleteRef}
-          type="text"
-          placeholder="Enter a location"
-        />
-        <label htmlFor="place">{selectedPlace}</label>
+        <div className="flex flex-col">
+          <h3 className="md:pt-8 pb-4">
+            Enter your location to find local repair and alteration services
+          </h3>
+
+          <input
+            ref={placeAutocompleteRef}
+            type="text"
+            placeholder="Enter a location"
+            className="outline outline-smokeGrey rounded-md p-2"
+          />
+          <label htmlFor="place">
+            Showing Results For <b>{selectedPlace} </b>
+          </label>
+        </div>
+        {repairServices && repairServices.length > 0 ? (
+          <div className="flex flex-col max-w-2xl items-start mb-8">
+            {repairServices.map((service, index) => (
+              <ul className="w-full">
+                <li key={index} className="border-b py-2">
+                  <div className="text-start flex p-1">
+                    <IoBusinessSharp className="h-4 w-4 mt-1 mr-1" />
+                    <p>
+                      <b>Business-</b>
+                      {service.name}
+                    </p>
+                  </div>
+                  <div className="text-start flex p-1">
+                    <FaLocationDot className="h-4 w-4 mt-1 mr-1" />
+
+                    <p>
+                      <b>Address-</b>
+                      {service.address}
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            ))}
+          </div>
+        ) : (
+          <p>Search to see results</p>
+        )}
         {isLoaded ? (
           <div className="h-[600px] w-[600px]" ref={mapRef}></div>
         ) : (
           <div>Loading...</div>
-        )}
-        {repairServices && repairServices.length > 0 ? (
-          <div>
-            <p>{repairServices}</p>
-          </div>
-        ) : (
-          <p>No tailoring services found.</p>
         )}
       </div>
     </div>

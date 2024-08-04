@@ -57,7 +57,15 @@ export default function Products({ products }: { products: Product[] }) {
               <div className="flex flex-col items-start py-3 font-thin w-full">
                 {" "}
                 <div className=" flex items-center justify-between md:text-sm text-xs w-full font-medium py-2">
-                  <p className="body">{product.productName}</p>
+                  <Link
+                    href={{
+                      pathname: `/product/${product.id}`,
+                      query: { id: product.id },
+                    }}
+                    className="body"
+                  >
+                    {product.productName}
+                  </Link>
                   <AddToCart />
                 </div>
                 <p className="md:text-lg text-md">£{product.price}.00</p>
