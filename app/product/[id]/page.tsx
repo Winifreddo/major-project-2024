@@ -6,7 +6,7 @@ export default async function page({
   searchParams: { id: string };
 }) {
   const { id } = searchParams;
-
+  console.log(id);
   // Validate id
   if (!id || isNaN(parseInt(id))) {
     return <div className="bg-white">Invalid Product ID</div>;
