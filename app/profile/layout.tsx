@@ -8,11 +8,11 @@ export default function DashboardLayout({
 }) {
   return (
     <main className=" bg-white">
-      <div className="flex">
-        <div className="w-52">
+      <div className="flex lg:flex-row flex-col ">
+        <div className="w-52 mx-auto lg:mx-0">
           <DashboardNavigation />
         </div>
-        <div className="w-3/4">{children}</div>
+        <div className="lg:w-3/4">{children}</div>
       </div>
     </main>
   );

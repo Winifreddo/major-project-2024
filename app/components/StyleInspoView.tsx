@@ -4,7 +4,17 @@ import React from "react";
 import Image from "next/image";
 import "/public/fonts/fonts.css";
 import { IoIosHeartHalf } from "react-icons/io";
+import HowItWorks from "@/components/HowItWorks";
 
+type ImageProps = {
+  url: string;
+};
+
+const imageUrls: ImageProps[] = [
+  { url: "style1.svg" },
+  { url: "style2.svg" },
+  { url: "style3.svg" },
+];
 type styleItemProps = {
   id: number;
   imageUrl: string;
@@ -136,7 +146,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
   };
   return (
     <div className="font-poppins p-16 mb-8 text-center max-w-7xl mx-auto leading-loose">
-      <h1 className="md:text-4xl text-2xl p-4 font-semibold">
+      <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
         Style Inspiration
       </h1>
       <div
@@ -167,7 +177,9 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
         {/* </div> */}
         {/* <div className="p-2 my-4 shadow-md font-thin rounded-md"> */}
       </div>
-      <div className="p-2 shadow-md my-4 rounded-md font-thin">
+
+      <HowItWorks imageUrls={imageUrls} />
+      <div className="p-2  my-4  font-thin">
         <h3 className="p-4 italic text-md">
           {" "}
           Select an item from your previous orders to see some serious style!
