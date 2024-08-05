@@ -9,6 +9,7 @@ import AddToCart from "./AddToCart";
 import { BiWorld } from "react-icons/bi";
 import { RiLeafFill } from "react-icons/ri";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
+import { Suspense } from "react";
 
 type Product = {
   id: number;
@@ -88,27 +89,22 @@ export default function Products({ products }: { products: Product[] }) {
                         <div className="grid place-content-center">
                           <button className="text-sm bg-smokeGrey py-2 md:px-4 md:mt-2 rounded-sm w-28 text-white font-semibold hover:bg-salmonPink hover:text-smokeGrey">
                             {" "}
-                            <Link
-                              href={{
-                                pathname: `/product/${product.id}`,
-                                query: { id: product.id },
-                              }}
-                            >
-                              Shop Now
-                            </Link>
+                            <Suspense fallback={<div>Loading...</div>}>
+                              <Link
+                                href={{
+                                  pathname: `/product/${product.id}`,
+                                  query: { id: product.id },
+                                }}
+                              >
+                                Shop Now
+                              </Link>
+                            </Suspense>
                           </button>
                         </div>
                       </div>
                     </div>
                   )}
                 </div>
-
-                {/* <Image
-                  src={`/images/${product.productImageOne}`}
-                  alt={product.productName}
-                  width={400}
-                  height={564}
-                /> */}
               </Link>
 
               <div className="flex flex-col items-start py-3 font-thin w-full">
