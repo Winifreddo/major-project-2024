@@ -2,21 +2,8 @@ import Image from "next/image";
 import prisma from "@/lib/prisma";
 import Products from "@/app/components/Products";
 import { Metadata } from "next";
-// type Product = {
-//   id: number;
-//   productName: string;
-//   price: number;
-//   colour: string;
-//   category: string;
-//   subCategory: string;
-//   productImageOne: string;
-//   productImageTwo: string;
-//   productImageThree: string | null;
-//   description: string;
-//   material: string;
-//   materialSource: string;
-//   madeIn: string;
-// };
+import { Suspense } from "react";
+
 export const metadata: Metadata = {
   title: "Shop",
 };
@@ -28,7 +15,7 @@ export default async function page({
 }) {
   const category = searchParams.category;
   console.log(category);
-  // console.log(category);
+  // TODO: add suspense above products
   const products = await prisma.product.findMany({
     where: { category: category },
     select: {
@@ -50,7 +37,9 @@ export default async function page({
   console.log(products);
   return (
     <div className="bg-white">
-      <Products products={products} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Products products={products} />
+      </Suspense>
     </div>
   );
 }

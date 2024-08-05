@@ -97,7 +97,7 @@ export default async function page() {
         My Orders
       </h1>
       <div
-        className="p-8 text-start grid grid-cols-1 w-1/2 place-items-center mx-auto shadow-md rounded-md mt-8"
+        className="p-8 text-start grid grid-cols-1 lg:w-1/2 place-items-center mx-auto shadow-md rounded-md mt-8"
         style={{
           backgroundImage: "url('/images/accountbg2.svg')",
           backgroundSize: "fill",
