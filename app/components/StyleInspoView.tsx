@@ -210,7 +210,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
         {selectedOrder && (
           <div className="p-2 my-16 ">
             <div className="grid grid-cols-1 place-items-center">
-              <div className="grid grid-cols-2 mb-6 shadow-md  place-items-center rounded-md ">
+              <div className="grid lg:grid-cols-2 grid-cols-1 mb-6 shadow-md  place-items-center rounded-md ">
                 <Image
                   src={`/images/${selectedOrder.imageUrl}`}
                   alt="style-inspo"
@@ -246,7 +246,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
                     </div>
                   ))}
               </div>
-              <div className="grid grid-cols-2 mb-6 shadow-md  place-items-center rounded-md ">
+              <div className="grid lg:grid-cols-2 grid-cols-1 mb-6 shadow-md  place-items-center rounded-md ">
                 <Image
                   src={`/images/${selectedOrder.imageUrl2}`}
                   alt="style-inspo"
