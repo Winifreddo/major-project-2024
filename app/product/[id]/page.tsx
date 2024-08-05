@@ -6,8 +6,16 @@ export default async function page({
   searchParams: { id: string };
 }) {
   const { id } = searchParams;
+
+  // Validate id
+  if (!id || isNaN(parseInt(id))) {
+    return <div className="bg-white">Invalid Product ID</div>;
+  }
+
+  const productId = parseInt(id);
+
   const product = await prisma.product.findUnique({
-    where: { id: parseInt(id) },
+    where: { id: productId },
     select: {
       id: true,
       productName: true,
