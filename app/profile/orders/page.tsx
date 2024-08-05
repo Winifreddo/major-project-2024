@@ -96,7 +96,15 @@ export default async function page() {
       <h1 className="font-poppins text-center font-semibold text-4xl">
         My Orders
       </h1>
-      <div className="p-8 text-start grid grid-cols-1 place-items-center shadow-md rounded-md mt-8">
+      <div
+        className="p-8 text-start grid grid-cols-1 w-1/2 place-items-center mx-auto shadow-md rounded-md mt-8"
+        style={{
+          backgroundImage: "url('/images/accountbg2.svg')",
+          backgroundSize: "fill",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="flex gap-1">
           <h2 className="text-lg font-semibold">Order no:</h2>
           <p> {orderItem[0].orderItems[0].orderId}</p>
@@ -110,6 +118,10 @@ export default async function page() {
           <p> {orderQuantity}</p>
         </div>
         <RetrieveOrderItems order={fullOrder} />
+        {/* <hr className="text-smokeGrey " /> */}
+        <p className=" border-t-2 border-smokeGrey text-center w-full mt-2">
+          <b>Order Status:</b> Delivered{" "}
+        </p>
       </div>
     </div>
   );
