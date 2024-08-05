@@ -6,13 +6,23 @@ export default async function page({
   searchParams: { id: string };
 }) {
   const { id } = searchParams;
-  console.log(id);
-  // Validate id
-  if (!id || isNaN(parseInt(id))) {
+
+  console.log("searchParams:", searchParams);
+
+  if (!id) {
+    console.error("Missing product ID:", id);
     return <div className="bg-white">Invalid Product ID</div>;
   }
 
   const productId = parseInt(id);
+  console.log("typeof id:", typeof productId);
+  console.log(isNaN(productId));
+
+  if (typeof productId !== "number") {
+    console.error("Invalid product ID, not a number:", id);
+    return <div className="bg-white">Invalid Product ID</div>;
+    console.log("typeof id:", typeof productId);
+  }
 
   const product = await prisma.product.findUnique({
     where: { id: productId },
