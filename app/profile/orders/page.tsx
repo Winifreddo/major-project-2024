@@ -92,15 +92,25 @@ export default async function page() {
     orderItem[0].orderItems[1].quantity +
     orderItem[0].orderItems[2].quantity;
   return (
-    <div className="font-poppins grid-grid-cols-1 place-content-center">
-      <h1 className="font-poppins text-center font-semibold text-2xl">
+    <div className="font-poppins p-16 max-w-6xl mx-auto leading-loose">
+      <h1 className="font-poppins text-center font-semibold text-4xl">
         My Orders
       </h1>
-      <h2>Order no: {orderItem[0].orderItems[0].orderId}</h2>
-      <h3>Order Total: £{orderTotal}.00</h3>
-      <h3>Items in this order: {orderQuantity} </h3>
-
-      <RetrieveOrderItems order={fullOrder} />
+      <div className="p-8 text-start grid grid-cols-1 place-items-center shadow-md rounded-md mt-8">
+        <div className="flex gap-1">
+          <h2 className="text-lg font-semibold">Order no:</h2>
+          <p> {orderItem[0].orderItems[0].orderId}</p>
+        </div>
+        <div className="flex gap-1">
+          <h3 className="text-lg font-semibold">Order Total:</h3>
+          <p>£{orderTotal}.00</p>
+        </div>
+        <div className="flex gap-1">
+          <h3 className="text-lg font-semibold">Items in this order:</h3>
+          <p> {orderQuantity}</p>
+        </div>
+        <RetrieveOrderItems order={fullOrder} />
+      </div>
     </div>
   );
 }
