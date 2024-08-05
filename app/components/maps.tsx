@@ -224,8 +224,8 @@ export default function Maps() {
         {repairServices && repairServices.length > 0 ? (
           <div className="flex flex-col max-w-2xl items-start mb-8">
             {repairServices.map((service, index) => (
-              <ul className="w-full">
-                <li key={index} className="border-b py-2">
+              <ul className="w-full" key={index}>
+                <li className="border-b py-2">
                   <div className="text-start flex p-1">
                     <IoBusinessSharp className="h-4 w-4 mt-1 mr-1" />
                     <p>

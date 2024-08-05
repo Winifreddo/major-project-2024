@@ -3,14 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useSession } from "next-auth/react";
-import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 export default function DashboardNavigation() {

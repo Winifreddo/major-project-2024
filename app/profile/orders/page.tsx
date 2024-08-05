@@ -93,7 +93,9 @@ export default async function page() {
     orderItem[0].orderItems[2].quantity;
   return (
     <div className="font-poppins grid-grid-cols-1 place-content-center">
-      <h1 className="text-center font-semibold text-2xl">My Orders</h1>
+      <h1 className="font-poppins text-center font-semibold text-2xl">
+        My Orders
+      </h1>
       <h2>Order no: {orderItem[0].orderItems[0].orderId}</h2>
       <h3>Order Total: £{orderTotal}.00</h3>
       <h3>Items in this order: {orderQuantity} </h3>
