@@ -146,7 +146,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
   };
   return (
     <div className="font-poppins p-16 mb-8 text-center max-w-7xl mx-auto leading-loose">
-      <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
+      {/* <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
         Style Inspiration
       </h1>
       <div
@@ -175,8 +175,8 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
           <b> Peace and love, The Reform Team x </b>
         </p>
         {/* </div> */}
-        {/* <div className="p-2 my-4 shadow-md font-thin rounded-md"> */}
-      </div>
+      {/* <div className="p-2 my-4 shadow-md font-thin rounded-md"> */}
+      {/* </div> */}
 
       <HowItWorks imageUrls={imageUrls} />
       <div className="p-2  my-4  font-thin">

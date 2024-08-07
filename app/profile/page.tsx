@@ -21,8 +21,10 @@ export default async function page() {
 
   return (
     <div className="font-poppins p-16 text-center max-w-6xl mx-auto leading-loose">
-      <h1 className=" text-4xl font-semibold">Welcome {profile?.firstName}</h1>
-      <p className="p-2">What would you like to do today?</p>
+      <h1 className=" text-4xl font-semibold font-poppins">
+        Welcome {profile?.firstName}
+      </h1>
+      <p className="p-2 mb-14">What would you like to do today?</p>
 
       <div
         className="grid md:grid-cols-3 grid-cols-1 place-items-center p-8 gap-6 text-center shadow-md rounded-md overflow-y-scroll"

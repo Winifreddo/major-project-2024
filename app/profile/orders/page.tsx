@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 export default async function page() {
   const session = await getSession();
   const user = session?.user;
-
+  console.log(user?.id);
   // get profile id from session
+
   const profile = await prisma.profile.findUnique({
     where: {
       userId: user?.id,
@@ -22,7 +23,19 @@ export default async function page() {
       orders: true,
     },
   });
-
+  console.log(profile);
+  if (profile === null) {
+    return (
+      <div>
+        <h1 className="font-poppins mb-14 text-center font-semibold text-4xl">
+          My Orders
+        </h1>
+        <p className="font-poppins text-center">
+          You currently have no orders.
+        </p>
+      </div>
+    );
+  }
   // get order from profile
   const orderNumber = profile?.orders?.id;
   const orderItem = await prisma.order.findMany({
@@ -82,7 +95,7 @@ export default async function page() {
   });
   const fullOrder = [productOne, productTwo, productThree];
 
-  console.log(fullOrder);
+  // console.log(fullOrder);
   const orderTotal =
     (productOne?.price ?? 0) +
     (productTwo?.price ?? 0) +
@@ -93,7 +106,7 @@ export default async function page() {
     orderItem[0].orderItems[2].quantity;
   return (
     <div className="font-poppins p-16 max-w-6xl mx-auto leading-loose">
-      <h1 className="font-poppins text-center font-semibold text-4xl">
+      <h1 className="font-poppins mb-14 text-center font-semibold text-4xl">
         My Orders
       </h1>
       <div

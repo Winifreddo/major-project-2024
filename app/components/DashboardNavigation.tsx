@@ -35,25 +35,21 @@ export default function DashboardNavigation() {
             </div>
             <div className="hover:bg-lightYellow rounded-md p-2 w-full">
               <Link className="pb-4 " href="/profile">
-                Dashboard
-              </Link>
-            </div>
-            <div className="hover:bg-salmonPink rounded-md p-2 w-full">
-              <Link className="pb-4" href="/profile/settings">
-                Settings
+                Dashboard Home
               </Link>
             </div>
             <div className="hover:bg-lightBlue rounded-md p-2 w-full">
-              <Link className="pb-4" href={`/profile/account/${user?.id}`}>
-                Account
+              <Link className="pb-4" href="/profile/settings">
+                Account Settings
               </Link>
             </div>
-            <div className="hover:bg-mint rounded-md p-2 w-full">
+
+            <div className="hover:bg-salmonPink rounded-md p-2 w-full">
               <Link className="pb-4" href="/profile/orders">
                 Orders
               </Link>
             </div>
-            <div className="hover:bg-mint rounded-md p-2 w-full">
+            <div className="hover:bg-stoneDark rounded-md p-2 w-full">
               <Link className="pb-4" href="/profile/orders">
                 Inspiration
               </Link>
@@ -121,7 +117,7 @@ export default function DashboardNavigation() {
                       <div className="hover:bg-mint rounded-md p-2 w-full">
                         <Link
                           className="pb-4"
-                          href="/profile/orders"
+                          href="/profile/styleinspo"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Inspiration

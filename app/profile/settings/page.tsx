@@ -28,11 +28,8 @@ export default async function page() {
   }
 
   return (
-    <div>
-      <Link href="/profile" className="p-4">
-        Back to Dashboard
-      </Link>{" "}
-      {/* pass the response object from the db request */}
+    <div className="w-full grid grid-cols-1 place-items-center gap-2 p-16 leading-loose">
+      <h1 className="font-poppins text-4xl font-semibold mb-24">My details</h1>
       <SettingsPage user={response} />
     </div>
   );
