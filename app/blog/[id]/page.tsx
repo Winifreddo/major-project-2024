@@ -16,7 +16,7 @@ export default async function page({
 
   // console.log(blog);
 
-  const blogPost = await prisma.blog.findUnique({
+  const blogPost = await prisma.blog.findMany({
     where: {
       id: blog,
     },
@@ -33,10 +33,12 @@ export default async function page({
     },
   });
 
-  console.log(blogPost);
+  const IndividualBlogPost = blogPost[0];
+
+  console.log("Individual ", IndividualBlogPosts);
   return (
     <div className="bg-white">
-      {blogPost && <IndividualBlogPosts blogpost={blogPost} />}
+      {blogPost && <IndividualBlogPosts blogpost={IndividualBlogPost} />}
     </div>
   );
 }

@@ -94,11 +94,10 @@ const Card = ({ card }: { card: CardType }) => {
         <button>
           <Link
             className="bg-black text-white font-poppins px-4 py-2 rounded-b-lg"
-            // href={{
-            //   pathname: `/blog/${card.url}`,
-            //   query: { id: card.url },
-            // }}
-            href={`/blog/${card.url}`}
+            href={{
+              pathname: `/blog/${card.url}`,
+              query: { id: card.url },
+            }}
           >
             Read More
           </Link>
