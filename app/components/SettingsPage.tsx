@@ -1,8 +1,9 @@
-"use client";
-
+import prisma from "@/lib/prisma";
 import React from "react";
 import { useState, useEffect } from "react";
-import prisma from "@/lib/prisma";
+import { Session } from "next-auth";
+import getSession from "@/lib/getSession";
+// import updateProfile from "@/app/updateActions";
 
 interface UserProfile {
   id: number;

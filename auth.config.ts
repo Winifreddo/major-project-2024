@@ -8,7 +8,7 @@ import { Adapter } from "next-auth/adapters";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   theme: {
     brandColor: "#F5F0EC",
-    logo: "/images/Reform.png",
+    logo: "/images/ReformLogo2.svg",
   },
   callbacks: {
     async redirect({url, baseUrl}) {

@@ -2,10 +2,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import React from "react";
 import Image from "next/image";
 import { Session } from "next-auth";
-import LogoutIcon from "@mui/icons-material/Logout";
 import Link from "next/link";
-import LogoutButton from "./LogoutButton";
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { signOut } from "next-auth/react";
 
 interface UserButtonProps {
