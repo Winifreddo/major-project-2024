@@ -24,7 +24,7 @@ export default async function page() {
     },
   });
   console.log(profile);
-  if (profile === null) {
+  if (profile?.orders === null) {
     return (
       <div>
         <h1 className="font-poppins mb-14 text-center font-semibold text-4xl">

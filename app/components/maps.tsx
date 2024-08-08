@@ -215,7 +215,7 @@ export default function Maps() {
             ref={placeAutocompleteRef}
             type="text"
             placeholder="Enter a location"
-            className="outline outline-smokeGrey rounded-md p-2"
+            className="outline outline-smokeGrey rounded-md p-2 w-full"
           />
           <label htmlFor="place">
             Showing Results For <b>{selectedPlace} </b>
@@ -249,7 +249,10 @@ export default function Maps() {
           <p>Search to see results</p>
         )}
         {isLoaded ? (
-          <div className="h-[600px] w-[600px]" ref={mapRef}></div>
+          <div
+            className="md:h-[600px] md:w-[600px] h-[350px] w-[350px] mx-auto"
+            ref={mapRef}
+          ></div>
         ) : (
           <div>Loading...</div>
         )}

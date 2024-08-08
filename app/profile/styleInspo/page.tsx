@@ -33,10 +33,10 @@ export default async function page() {
       orders: true,
     },
   });
-  if (profile === null) {
+  if (profile?.orders === null) {
     return (
       <>
-        <div className="text-center">
+        <div className="text-center font-poppins p-16 mb-8 max-w-7xl md:ml-1 mx-auto leading-loose">
           <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
             Style Inspiration
           </h1>
@@ -100,7 +100,7 @@ export default async function page() {
   // console.log("order", orderItem[0].orderItems);
 
   return (
-    <div>
+    <div className="font-poppins p-16 mb-8 text-center max-w-7xl mx-auto leading-loose">
       <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
         Style Inspiration
       </h1>

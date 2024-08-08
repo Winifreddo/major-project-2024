@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import React from "react";
-import SettingsPage from "@/app/components/SettingsPage";
 // import { auth } from "@/auth.config";
 import { redirect } from "next/navigation";
 import getSession from "@/lib/getSession";
@@ -107,9 +106,9 @@ export default async function page() {
     }
   };
   return (
-    <div className="w-full grid grid-cols-1 place-items-center gap-2 p-16 leading-loose">
-      <h1 className="font-poppins text-4xl font-semibold mb-24">My details</h1>
-
+    <div className="w-full grid grid-cols-1 font-poppins place-items-center gap-2 p-16 leading-loose">
+      <h1 className="font-poppins text-4xl font-semibold ">My details</h1>
+      <p className="mb-24">View and update your details here.</p>
       <form action={updateProfile} className="w-full rounded-md shadow-md">
         <div className="grid md:grid-cols-2 grid-cols-1 place-content-center m-4">
           <div className="flex flex-col font-poppins m-4 ">

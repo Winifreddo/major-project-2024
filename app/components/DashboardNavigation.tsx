@@ -17,7 +17,7 @@ export default function DashboardNavigation() {
   }
   return (
     <section>
-      <nav className="py-16 pl-8 font-poppins text-lg ">
+      <nav className="md:py-16 pt-8 pl-8 font-poppins text-lg ">
         <div className=" flex flex-col">
           <div className="flex lg:hidden">
             <button
@@ -83,29 +83,20 @@ export default function DashboardNavigation() {
                           href="/profile"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          Dashboard
-                        </Link>
-                      </div>
-                      <div className="hover:bg-salmonPink rounded-md p-2 w-full">
-                        <Link
-                          className="pb-4"
-                          href="/profile/settings"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Settings
+                          Dashboard Home
                         </Link>
                       </div>
                       <div className="hover:bg-lightBlue rounded-md p-2 w-full">
                         <Link
                           className="pb-4"
-                          href={`/profile/account/${user?.id}`}
+                          href="/profile/settings"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          Account
+                          Account Settings
                         </Link>
                       </div>
 
-                      <div className="hover:bg-mint rounded-md p-2 w-full">
+                      <div className="hover:bg-salmonPink rounded-md p-2 w-full">
                         <Link
                           className="pb-4"
                           href="/profile/orders"
@@ -117,7 +108,7 @@ export default function DashboardNavigation() {
                       <div className="hover:bg-mint rounded-md p-2 w-full">
                         <Link
                           className="pb-4"
-                          href="/profile/styleinspo"
+                          href="/profile/styleInspo"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Inspiration
