@@ -93,12 +93,13 @@ const page = () => {
         </h3>
         <p>
           At Re-form, we believe in the power of transparency. From the
-          materials we source to the way we treat our team, we're committed to
+          materials we source to the way we treat our team, were committed to
           operating with integrity and openness. We strive to provide you with
           clear information about our processes, so you can make informed
-          choices that align with your values. Transparency isn't just a
-          policy—it's a promise to you, our community, that we stand by every
-          product we create, every decision we make, and every word we say.
+          choices that align with your values. Transparency isn&#39;t just a
+          policy—it&#39;s a promise to you, our community, that we stand by
+          every product we create, every decision we make, and every word we
+          say.
         </p>
       </div>
       <div
@@ -112,10 +113,10 @@ const page = () => {
       >
         <h3 className="text-center text-lg font-semibold">Contact Us</h3>
         <p>
-          If you have any questions, concerns, or feedback, please don't
-          hesitate to reach out to our customer service team. We're here to help
-          and are committed to providing you with the best possible experience.
-          You can contact us via phone or email.
+          If you have any questions, concerns, or feedback, please don&#39;t
+          hesitate to reach out to our customer service team. We&#39;re here to
+          help and are committed to providing you with the best possible
+          experience. You can contact us via phone or email.
           <br />
           <div className=" text-center ">
             <p>
