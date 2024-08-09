@@ -6,21 +6,17 @@ import ShoppingCat from "@/components/ShoppingCat";
 import FeaturedMaterials from "@/components/FeaturedMaterials";
 import FeaturedPoducts from "@/components/FeaturedProduct";
 import ShuffleHero from "@/components/ImageGal";
-import Socials from "@/components/Socials";
+
 import BlogHighlight from "@/components/BlogHighlight";
 
 export default async function Home() {
   return (
     <main className="min-h-screen bg-bgColor">
-      {/* <Hero /> */}
-
       <ShuffleHero />
       <FeaturedPoducts />
       <ShoppingCat />
       <FeaturedMaterials />
       <BlogHighlight />
-
-      {/* <SmoothScroll /> */}
     </main>
   );
 }
