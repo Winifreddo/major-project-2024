@@ -26,6 +26,7 @@ type Product = {
   materialSource: string;
   madeIn: string;
 };
+
 export default function Products({ products }: { products: Product[] }) {
   const [isHovered, setIsHovered] = useState(false);
   const searchParams = useSearchParams();
@@ -61,7 +62,7 @@ export default function Products({ products }: { products: Product[] }) {
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                   className="md:h-[400px]   
-             h-[275px] md:w-[220px] w-[175x]"
+             h-[285px] md:w-[265px] w-[175x]"
                 >
                   {isHovered && (
                     <div className="md:h-[400px] h-[275px] transition-all text-center ease-out delay-75 grid place-content-center hover:bg-gradient-to-br from-white/40 to-white/10  p-4 hover:backdrop-blur-lg opacity-0 hover:opacity-100">

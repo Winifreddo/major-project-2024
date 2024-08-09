@@ -17,26 +17,26 @@ const cards: CardType[] = [
   {
     id: 1,
     imageUrl: "/images/blogCotton.svg",
-    title: "Blog 1",
-    url: "1",
+    title: "Materials",
+    url: "6",
   },
   {
     id: 2,
     imageUrl: "/images/blogRecycle.svg",
-    title: "Blog 2",
-    url: "2",
+    title: "Commitment",
+    url: "5",
   },
   {
     id: 3,
     imageUrl: "/images/blogSustMat.svg",
-    title: "Blog 3",
-    url: "3",
+    title: "Sustainability",
+    url: "7",
   },
   {
     id: 4,
     imageUrl: "/images/blogResponsible.svg",
-    title: "Blog 4",
-    url: "4",
+    title: "Responsibility",
+    url: "5",
   },
 ];
 
@@ -64,7 +64,7 @@ const HorizontalScroll = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-47%"]);
 
   return (
     <section ref={targetRef} className="relative md:h-[450vh] h-[250vh] ">

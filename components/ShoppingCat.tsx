@@ -9,15 +9,6 @@ import { RiLeafFill } from "react-icons/ri";
 import Section from "./Section";
 
 const fabricInfo = [
-  // {
-  //   id: 1,
-  //   name: "Carmella Jeans",
-  //   price: "£89.00",
-  //   image: "/images/jeans5-1.webp",
-  //   fabric: "Cotton",
-  //   madeIn: "India",
-  //   designedIn: "the UK",
-  // },
   {
     id: 2,
     name: "Linen Shirt",
@@ -123,7 +114,9 @@ const ProductCard = ({ product }: { product: any }) => {
             <div className="grid place-content-center">
               <button className="text-sm bg-smokeGrey py-2 md:px-4 md:mt-2 rounded-sm w-28 text-white font-semibold hover:bg-salmonPink hover:text-smokeGrey">
                 {" "}
-                <Link href={`/product/10?id=${product.productId}`}>
+                <Link
+                  href={`/product/${product.productId}?id=${product.productId}`}
+                >
                   Shop Now
                 </Link>
               </button>
@@ -161,13 +154,6 @@ const ShoppingCat = () => {
         </p>
         <div className="flex md:flex-row flex-col gap-2 max-w-7xl">
           <div className="transition md:w-1/3 ease-in-out delay-300">
-            {/* <Image
-              src="/images/jeans5-1.webp"
-              alt="jeans"
-              width={600}
-              height={600}
-              className="object-cover h-full w-full"
-            /> */}
             <div
               style={{
                 backgroundImage: `url(/images/jeans5-1.webp)`,
@@ -180,7 +166,7 @@ const ShoppingCat = () => {
                 <h3 className="text-lg  uppercase font-bold py-2 text-stoneLight ">
                   Carmella Jeans £79.00
                 </h3>
-                <div className=" font-thin text-salmonPink p-3 md:w-[200px] w-[150px]">
+                <div className=" font-thin mx-auto text-salmonPink p-3 md:w-[200px] w-[150px]">
                   <div className="flex justify-start text-center md:text-sm text-xs bg-mossGreen text-salmonPink p-3 rounded-t-lg opacity-75 m-1 ">
                     <p className="pr-1 ">
                       <RiLeafFill className="h-5 w-5" />

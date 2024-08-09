@@ -45,7 +45,6 @@ const Materials = [
 export default function FeaturedMaterials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
-  // const [hideContent, setHideContent] = useState(true);
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
   return (
     <>
@@ -57,7 +56,7 @@ export default function FeaturedMaterials() {
           transition={{ type: "spring", damping: 50, stiffness: 200, mass: 3 }}
           className="col-span-12 md:col-span-8 mx-auto"
         >
-          <div className="font-medium uppercase p-4 pb-0 lg:pb-4 text-center text-2xl md:text-4xl leading-relaxed">
+          <div className="font-medium uppercase p-4 pb-0 lg:pb-4 text-center text-2xl md:text-4xl leading-relaxed ">
             <h2 className="headings">Our promise to you</h2>
             <p className="font-thin font-poppins py-4 text-lg md:text-2xl">
               Twill You Be Impressed? Our Clothes Say Yes!
@@ -65,7 +64,7 @@ export default function FeaturedMaterials() {
           </div>
         </Section>
       </div>
-      <div className="mx-auto max-w-8xl bg-white ">
+      <div className="mx-auto max-w-8xl bg-white">
         <Section className="grid md:grid-cols-2 gap-0 max-w-6xl mx-auto ">
           {Materials.map((material, index) => (
             <div
@@ -80,11 +79,11 @@ export default function FeaturedMaterials() {
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                 }}
-                className="w-full h-[500px] md:h-[550px] bg-cover bg-center ease-in duration-300"
+                className="w-full h-[500px] md:h-[550px] bg-cover bg-center "
               >
                 <div className="h-full text-center">
                   {hoveredIndex === index ? (
-                    <div className="h-[500px] md:h-[550px] grid place-content-center bg-gradient-to-br from-white/40 to-white/10  p-4 backdrop-blur-lg">
+                    <div className="h-[500px] md:h-[550px] grid place-content-center hover:bg-gradient-to-br from-white/40 to-white/10  p-4 hover:backdrop-blur-lg opacity-0 hover:opacity-100 transition-all ease-out delay-75">
                       <h3 className="text-4xl uppercase text-white font-semibold py-2 ">
                         {material.name}
                       </h3>

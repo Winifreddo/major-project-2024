@@ -108,9 +108,9 @@ export default async function page() {
   return (
     <div className="w-full grid grid-cols-1 font-poppins place-items-center gap-2 p-16 leading-loose">
       <h1 className="font-poppins text-4xl font-semibold ">My details</h1>
-      <p className="mb-24">View and update your details here.</p>
+      <p className="md:mb-24 mb-4">View and update your details here.</p>
       <form action={updateProfile} className="w-full rounded-md shadow-md">
-        <div className="grid md:grid-cols-2 grid-cols-1 place-content-center m-4">
+        <div className="grid md:grid-cols-2 grid-cols-1 place-content-center md:m-4">
           <div className="flex flex-col font-poppins m-4 ">
             <label htmlFor="firstName" className="font-semibold py-1">
               First Name

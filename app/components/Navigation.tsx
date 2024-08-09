@@ -5,6 +5,7 @@
 // import getSession from "@/lib/getSession";
 import React, { useState } from "react";
 import UserButton from "./UserButton";
+import { signOut } from "next-auth/react";
 
 // imports for client side rendering
 import { signIn, useSession } from "next-auth/react";
@@ -48,7 +49,7 @@ export default function Navigation() {
 
   return (
     <header className="font-poppins">
-      <nav className="flex max-w-8xl items-center justify-between py-2 lg:p-4 bg-white  ">
+      <nav className="flex max-w-8xl items-center justify-between py-2 lg:p-4 bg-white font-poppins ">
         <div className="flex  justify-start">
           <Link href="/">
             <span className="sr-only">Reform</span>{" "}
@@ -157,13 +158,14 @@ export default function Navigation() {
           <div className="px-4">
             <Search />
           </div>
-
-          {user && <UserButton user={user} />}
-          {!user && session.status !== "loading" && (
-            <button onClick={() => signIn()}>
-              <LoginIcon className="h-7 w-7 text-smokeGrey" />
-            </button>
-          )}
+          <div>
+            {user && <UserButton user={user} />}
+            {!user && session.status !== "loading" && (
+              <button onClick={() => signIn()}>
+                <LoginIcon className="h-7 w-7 text-smokeGrey" />
+              </button>
+            )}
+          </div>
           <FavoriteBorderIcon className="h-7 w-7 text-smokeGrey" />
           <ShoppingBagOutlinedIcon className="h-7 w-7 text-smokeGrey" />
         </div>
@@ -207,7 +209,7 @@ export default function Navigation() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y">
                 <div className="space-y-2 py-6">
-                  <Disclosure as="div" className="-mx-3">
+                  <Disclosure as="div" className="-mx-3 z-10 font-poppins">
                     {({ open }) => (
                       <>
                         <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7">
@@ -289,11 +291,12 @@ export default function Navigation() {
                   >
                     Basket
                   </Link>
-
-                  {user && <UserButton user={user} />}
-                  {!user && session.status !== "loading" && (
-                    <button onClick={() => signIn()}>Login</button>
-                  )}
+                  <div>
+                    {user && <UserButton user={user} />}
+                    {!user && session.status !== "loading" && (
+                      <button onClick={() => signIn()}>Login</button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ export default function HowItWorks({ imageUrls }: { imageUrls: ImageProps }) {
   return (
     <div>
       {" "}
-      <h1 className="md:text-3xl text-xl font-poppins font-semibold md:m-16">
+      <h1 className="md:text-3xl text-2xl m-16 font-poppins font-semibold">
         How it works..
       </h1>
       <div className="grid md:grid-cols-3 grid-cols-1 shadow-sm">

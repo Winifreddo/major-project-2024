@@ -59,7 +59,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
     // console.log(selectedOrder?.StyleInspo?.imageUrl);
     // console.log(order[0].StyleInspo?.orderItemId);
 
-    if (selectedOrder?.StyleInspo?.orderItemId === 9) {
+    if (selectedOrder?.StyleInspo?.orderItemId === 12) {
       const casualStyleAdvice: Props[] = [
         {
           id: 1,
@@ -87,7 +87,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
       ];
       setDressedUpStyleAdvice(dressedUpAdvice);
     }
-    if (selectedOrder?.StyleInspo?.orderItemId === 10) {
+    if (selectedOrder?.StyleInspo?.orderItemId === 13) {
       const casualStyleAdvice: Props[] = [
         {
           id: 2,
@@ -115,7 +115,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
       setDressedUpStyleAdvice(dressedUpAdvice);
     }
 
-    if (selectedOrder?.StyleInspo?.orderItemId === 11) {
+    if (selectedOrder?.StyleInspo?.orderItemId === 14) {
       const casualStyleAdvice: Props[] = [
         {
           id: 3,
@@ -143,50 +143,20 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
       ];
       setDressedUpStyleAdvice(dressedUpAdvice);
     }
+    console.log(casualStyleAdvice);
+    console.log(dressedUpStyleAdvice);
   };
   return (
-    <div className="font-poppins p-16 mb-8 text-center max-w-7xl mx-auto leading-loose">
-      {/* <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
-        Style Inspiration
-      </h1>
-      <div
-        className="p-2 shadow-md font-thin my-4 rounded-md"
-        style={{
-          backgroundImage: "url('/images/accountbg2.svg')",
-          backgroundSize: "fill",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      >
-        <p className="p-4">
-          {" "}
-          <span className="C">H</span>ave you ever looked at your clothes and
-          thought I have nothing to wear? Even though you have enough clothes to
-          rival any clothes shop? Us too! That&#39;s why we&#39;ve created a
-          personalised Style Inspiration column. Our old pieces can be just as
-          wonderful as our new ones and all it takes is a bit of re-imagining!
-        </p>
-        <p className="p-4 mb-4">
-          Simply select any item you have previously purchased with us (there is
-          no time limit, they could be items purchased 2 years ago!) and we will
-          give you ideas how to style it using items you most probably already
-          own. As we say here at Reform, It&#39;s not about the clothes,
-          it&#39;s about how you wear them! <br />
-          <b> Peace and love, The Reform Team x </b>
-        </p>
-        {/* </div> */}
-      {/* <div className="p-2 my-4 shadow-md font-thin rounded-md"> */}
-      {/* </div> */}
-
+    <div className="font-poppins lg:p-16 mb-8 text-center max-w-7xl mx-auto leading-loose">
       <HowItWorks imageUrls={imageUrls} />
-      <div className="p-2  my-4  font-thin">
+      <div className="p-2 my-4 font-thin">
         <h3 className="p-4 italic text-md">
           {" "}
           Select an item from your previous orders to see some serious style!
         </h3>
         <form
           onSubmit={getOrder}
-          className="grid grid-cols-2 py-2 px-4 w-1/2 mx-auto"
+          className="grid grid-cols-2 py-2 px-4 lg:w-1/2 w-full mx-auto"
         >
           <select name="order" id="order">
             <option value="">Select an item</option>
@@ -203,7 +173,7 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
               Carmela Jeans
             </option>
           </select>
-          <button className="bg-smokeGrey  text-white w-1/2 mx-auto my-4 rounded-md mb-3">
+          <button className="bg-smokeGrey lg:p-0 p-2 text-white lg:w-1/2 mx-auto my-4 rounded-md mb-3">
             Go
           </button>
         </form>
@@ -287,4 +257,41 @@ export default function StyleInspoView({ order }: { order: orderItemProps }) {
       </div>
     </div>
   );
+}
+{
+  /* <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
+        Style Inspiration
+      </h1>
+      <div
+        className="p-2 shadow-md font-thin my-4 rounded-md"
+        style={{
+          backgroundImage: "url('/images/accountbg2.svg')",
+          backgroundSize: "fill",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
+        <p className="p-4">
+          {" "}
+          <span className="C">H</span>ave you ever looked at your clothes and
+          thought I have nothing to wear? Even though you have enough clothes to
+          rival any clothes shop? Us too! That&#39;s why we&#39;ve created a
+          personalised Style Inspiration column. Our old pieces can be just as
+          wonderful as our new ones and all it takes is a bit of re-imagining!
+        </p>
+        <p className="p-4 mb-4">
+          Simply select any item you have previously purchased with us (there is
+          no time limit, they could be items purchased 2 years ago!) and we will
+          give you ideas how to style it using items you most probably already
+          own. As we say here at Reform, It&#39;s not about the clothes,
+          it&#39;s about how you wear them! <br />
+          <b> Peace and love, The Reform Team x </b>
+        </p>
+        {/* </div> */
+}
+{
+  /* <div className="p-2 my-4 shadow-md font-thin rounded-md"> */
+}
+{
+  /* </div> */
 }

@@ -15,7 +15,7 @@ export default async function page({
 }) {
   const category = searchParams.category;
   console.log(category);
-  // TODO: add suspense above products
+
   const products = await prisma.product.findMany({
     where: { category: category },
     select: {

@@ -16,6 +16,7 @@ type BlogPost = {
 };
 
 const IndividualBlogPosts = ({ blogpost }: { blogpost: BlogPost }) => {
+  console.log(blogpost.title);
   return (
     <div className="max-w-5xl mx-auto pb-16 text-justify font-poppins">
       <div className="lg:p-16 md:p-8 p-4 leading-loose text-center">

@@ -54,6 +54,15 @@ export default function DashboardNavigation() {
                 Inspiration
               </Link>
             </div>
+            <div className="hover:bg-salmonPink rounded-md p-2 w-full">
+              <Link
+                className="pb-4"
+                href="/profile/repairs"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Local Repairs & Alterations
+              </Link>
+            </div>
             <Dialog
               className="lg:hidden"
               open={mobileMenuOpen}
@@ -112,6 +121,15 @@ export default function DashboardNavigation() {
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           Inspiration
+                        </Link>
+                      </div>
+                      <div className="hover:bg-stoneDark rounded-md p-2 w-full">
+                        <Link
+                          className="pb-4"
+                          href="/profile/repairs"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Local Repairs & Alterations
                         </Link>
                       </div>
                     </div>

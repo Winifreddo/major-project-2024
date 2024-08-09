@@ -40,10 +40,10 @@ export default async function page() {
           <Link href="/profile/orders" className="py-2">
             View My Orders
           </Link>
-          <Link href="/profile/settings" className="py-2">
+          <Link href="/profile/trackOrder" className="py-2">
             Track My Order
           </Link>
-          <Link href="#" className="py-2">
+          <Link href="/profile/returnOrder" className="py-2">
             Return an Order
           </Link>
         </div>
@@ -74,11 +74,11 @@ export default async function page() {
         </div>
         <div className="flex flex-col justify-center shadow-md w-full p-8 text-sm rounded-md h-56 bg-mint">
           <h2 className="font-semibold text-xl underline">Get Help</h2>
-          <Link href="/profile/repairs" className="py-2">
+          <Link href="/profile/help" className="py-2">
             Brand Transparency
           </Link>
-          <Link href="/profile/donate">Returns Policy</Link>
-          <Link href="/profile/styleInspo" className="py-2">
+          <Link href="/profile/help">Returns Policy</Link>
+          <Link href="/profile/help" className="py-2">
             Contact Us
           </Link>
         </div>

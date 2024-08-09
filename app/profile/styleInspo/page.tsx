@@ -100,12 +100,12 @@ export default async function page() {
   // console.log("order", orderItem[0].orderItems);
 
   return (
-    <div className="font-poppins p-16 mb-8 text-center max-w-7xl mx-auto leading-loose">
+    <div className="font-poppins mb-8 text-center max-w-7xl mx-auto leading-loose">
       <h1 className="md:text-4xl text-2xl p-4 font-poppins font-semibold">
         Style Inspiration
       </h1>
       <div
-        className="p-2 shadow-md font-thin my-4 rounded-md"
+        className="p-2 shadow-md font-thin my-4 rounded-md mx-2"
         style={{
           backgroundImage: "url('/images/accountbg2.svg')",
           backgroundSize: "fill",
@@ -129,50 +129,8 @@ export default async function page() {
           it&#39;s about how you wear them! <br />
           <b> Peace and love, The Reform Team x </b>
         </p>
-        {/* </div> */}
-        {/* <div className="p-2 my-4 shadow-md font-thin rounded-md"> */}
       </div>
-      {<StyleInspoView order={styleItems} />}{" "}
+      <StyleInspoView order={styleItems} />
     </div>
   );
 }
-
-{
-  /* <form
-        action={async (formData: FormData) => {
-          "use server";
-          const response = formData.get("order") as string;
-          const order = parseInt(response);
-          // console.log(order);
-
-          const orderStyle = await prisma.orderItem.findMany({
-            where: {
-              orderId: order,
-            },
-            select: {
-              StyleInspo: {
-                select: {
-                  id: true,
-                  orderItemId: true,
-                  imageUrl: true,
-                  imageUrl2: true,
-                },
-              },
-            },
-          });
-   
-          return orderStyle;
-        }}
-      >
-        <select name="order" id="order">
-          <option value=""> </option>
-          {orderItems.map((item) => (
-            <option key={item.id} value={item.orderId}>
-              {item.orderId}
-            </option>
-          ))}
-          {/* <option value="1">{orderItem[0].id}</option> */
-}
-//   </select>
-//   <button>Go</button>
-// </form> */}
